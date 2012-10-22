@@ -1,0 +1,487 @@
+
+    
+    <registryObjects xmlns="http://ands.org.au/standards/rif-cs/registryObjects"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://ands.org.au/standards/rif-cs/registryObjects http://services.ands.org.au/documentation/rifcs/schema/registryObjects.xsd"><!--
+                    key = 23
+                    status = 'publish'
+                --><registryObject group="Victoria University">
+      <key>vu/person/Patrick_Jean Guay</key>
+      <originatingSource>thinkred.com.au</originatingSource>
+      <party type="person">
+         <name type="primary">
+            <namePart type="title">Dr.</namePart>
+            <namePart type="given">Patrick</namePart>
+            <namePart type="family">Jean Guay</namePart>
+         </name>
+         <relatedObject>
+            <key>vu/project/23</key>
+            <relation type="isMemeberOf"/>
+         </relatedObject>
+         <relatedObject>
+            <key>vu/project/23</key>
+            <relation type="isOwnerOf"/>
+         </relatedObject>
+         <location>
+            <address>
+               <electronic type="email">
+                  <value>Patrick.Guay@vu.edu.au</value>
+               </electronic>
+               <physical type="streetAddress">
+                  <addressPart type="text">Building 6, Victoria University, St Albans, VIC 3021</addressPart>
+               </physical>
+            </address>
+         </location>
+      </party>
+   </registryObject>
+   <!--P1 call to vu_organization--><!--
+            org_school_name='SCHOOL OF ENGINEERING & SCIENCE'
+            org_faculty_name='FACULTY OF HEALTH, ENGINEERING & SCIENCE'
+            external_org_name=''
+         --><!-- internal organisation --><registryObject group="Victoria University">
+      <key>vu.edu.au/org-SCHOOL OF ENGINEERING &amp; SCIENCE - FACULTY OF HEALTH, ENGINEERING &amp; SCIENCE</key>
+      <originatingSource>thinkred.com.au</originatingSource>
+      <party type="group">
+         <name>
+            <namePart type="title">School Of Engineering &amp; Science, Victoria University</namePart>
+         </name>
+         <description type="brief"/>
+         <location>
+            <address/>
+         </location>
+      </party>
+   </registryObject>
+   <registryObject group="Victoria University">
+      <key>vu/project/Endocranial Volumes in Waterfowl</key>
+      <originatingSource>thinkred.com.au</originatingSource>
+      <activity type="project">
+         <name type="primary">
+            <namePart>Endocranial Volumes in Waterfowl</namePart>
+         </name>
+         <description type="brief">The project was started as Patrick\'s PhD work at the Department of Zoology, the University of Melbourne in 2003 and is still ongoing. This project estimates the brain size in as many species of Anseriformes as possible to investigate the evolution of brain size in the group by using a comparative approach.
+
+This research was supported by funding from Victoria University Fellowship, the Department of Zoology and the Faculty of Science of the University of Melbourne, the David Hay Scholarship, le Fonds québécois de la recherche sur la nature et les technologies, the Academy of Natural Sciences, Philadelphia, the Field Museum of Natural History and the American Museum of Natural History. The following institutions offered access to their collection and/or logistical help: The Auckland Museum, the Australian Museum, the Bird group of the Natural History Museum at Tring, the Bishop Museum, the Canadian Museum of Nature, the Canterbury Museum, the Carnegie Museum of Natural History, CSIRO Sustainable Ecosystems, Australian National Wildlife Collection, the Department of Ornithology of the American Museum of Natural History, the Field Museum of Natural History, the Florida Museum of Natural History, the McGill University Redpath Museum, le Muséum National d’Histoire Naturelle, the Museum of New Zealand Te Papa Tongarewa, the Museum of Vertebrate Zoology, the University of California Berkeley, Museum Victoria, the Natural History Museum of Los Angeles County, the Ornithology Department of the Museum of Comparative Zoology of Harvard University, the Queen Victoria Museum and Art Gallery, the Queensland Museum, the Royal Alberta Museum, the Royal British Columbia Museum, the Royal Ontario Museum, the Sam Noble Oklahoma Museum of Natural History, the San Diego Natural History Museum, the Smithsonian Institution, the South Australian Museum, the University of Alaska Museum, the University of Kansas Natural History Museum, the University of Michigan Museum of Zoology, the University of Washington Burke Museum, the Western Australian Museum, the Yale University Peabody Museum and the Zoology Museum of the University of Copenhagen.</description>
+         <subject type="anzsrc-for">0608</subject>
+         <relatedObject>
+            <key>vu/collection/23</key>
+            <relation type="hasOutput"/>
+         </relatedObject>
+      </activity>
+   </registryObject>
+   <registryObject group="Victoria University">
+      <key>vu/collection/23</key>
+      <originatingSource>thinkred.com.au</originatingSource>
+      <collection type="collection">
+         <name type="primary">
+            <namePart>Set 1 of 2 Collections of Measurements Relating to the Evolution of Brain Size in Water Birds</namePart>
+         </name>
+         <description type="brief">The data set collects brain size estimates in as many species of Anseriformes as possible to investigate the evolution of brain size in the group by using a comparative approach. Both wild and captive specimens were examined. The skeletal measurements were recorded in the Excel file, including several data fields such as brain cavity volume, average femur least diameter / circumference, average tibiotarsus least diameter / circumference, and average tarsus least diameter / circumference. The data collection was started in Nov 2003 and is still ongoing. The dataset 1 contains more than 1500 data records, some of which have been published in the related journals.
+
+This research was supported by funding from Victoria University Fellowship, the Department of Zoology and the Faculty of Science of the University of Melbourne, the David Hay Scholarship, le Fonds québécois de la recherche sur la nature et les technologies, the Academy of Natural Sciences, Philadelphia, the Field Museum of Natural History and the American Museum of Natural History. The following institutions offered access to their collection and/or logistical help: The Auckland Museum, the Australian Museum, the Bird group of the Natural History Museum at Tring, the Bishop Museum, the Canadian Museum of Nature, the Canterbury Museum, the Carnegie Museum of Natural History, CSIRO Sustainable Ecosystems, Australian National Wildlife Collection, the Department of Ornithology of the American Museum of Natural History, the Field Museum of Natural History, the Florida Museum of Natural History, the McGill University Redpath Museum, le Muséum National d’Histoire Naturelle, the Museum of New Zealand Te Papa Tongarewa, the Museum of Vertebrate Zoology, the University of California Berkeley, Museum Victoria, the Natural History Museum of Los Angeles County, the Ornithology Department of the Museum of Comparative Zoology of Harvard University, the Queen Victoria Museum and Art Gallery, the Queensland Museum, the Royal Alberta Museum, the Royal British Columbia Museum, the Royal Ontario Museum, the Sam Noble Oklahoma Museum of Natural History, the San Diego Natural History Museum, the Smithsonian Institution, the South Australian Museum, the University of Alaska Museum, the University of Kansas Natural History Museum, the University of Michigan Museum of Zoology, the University of Washington Burke Museum, the Western Australian Museum, the Yale University Peabody Museum and the Zoology Museum of the University of Copenhagen.</description>
+         <rights>
+            <licence>All rights reserved – private research and study only, fair use, any other use requires contact for permission</licence>
+            <accessRights>No access restrictions to Data Set One. Please contact Dr. Patrick Guay - Patrick.Guay@vu.edu.au for access details.</accessRights>
+         </rights>
+         <coverage>
+            <temporal>
+               <text>2003-11-01</text>
+            </temporal>
+         </coverage>
+         <location>
+            <address>
+               <electronic type="email">
+                  <value>Patrick.Guay@vu.edu.au</value>
+               </electronic>
+               <physical type="streetAddress">
+                  <addressPart type="text">Building 6, Victoria University, St Albans, VIC 3021</addressPart>
+               </physical>
+            </address>
+         </location>
+         <relatedInfo type="publication">
+            <identifier type="doi">10.1525/cond.2008.8424</identifier>
+            <title>Guay, P.-J. and Iwaniuk, A.N. (2008) Captive breeding reduces brain volume in waterfowl (Anseriformes). Condor, 110: 276-284.</title>
+         </relatedInfo>
+      </collection>
+   </registryObject>
+   <!--
+                    key = 24
+                    status = ''
+                --><!--
+                    key = 25
+                    status = 'publish'
+                --><registryObject group="Victoria University">
+      <key>vu/person/Patrick_Jean Guy</key>
+      <originatingSource>thinkred.com.au</originatingSource>
+      <party type="person">
+         <name type="primary">
+            <namePart type="title">Dr.</namePart>
+            <namePart type="given">Patrick</namePart>
+            <namePart type="family">Jean Guy</namePart>
+         </name>
+         <relatedObject>
+            <key>vu/project/25</key>
+            <relation type="isMemeberOf"/>
+         </relatedObject>
+         <relatedObject>
+            <key>vu/project/25</key>
+            <relation type="isOwnerOf"/>
+         </relatedObject>
+         <location>
+            <address>
+               <electronic type="email">
+                  <value>Patrick.Guay@vu.edu.au</value>
+               </electronic>
+               <physical type="streetAddress">
+                  <addressPart type="text">Building 6, Victoria University, St Albans, VIC 3021</addressPart>
+               </physical>
+            </address>
+         </location>
+      </party>
+   </registryObject>
+   <!--P1 call to vu_organization--><!--
+            org_school_name='SCHOOL OF ENGINEERING & SCIENCE'
+            org_faculty_name='FACULTY OF HEALTH, ENGINEERING & SCIENCE'
+            external_org_name=''
+         --><!-- internal organisation --><registryObject group="Victoria University">
+      <key>vu.edu.au/org-SCHOOL OF ENGINEERING &amp; SCIENCE - FACULTY OF HEALTH, ENGINEERING &amp; SCIENCE</key>
+      <originatingSource>thinkred.com.au</originatingSource>
+      <party type="group">
+         <name>
+            <namePart type="title">School Of Engineering &amp; Science, Victoria University</namePart>
+         </name>
+         <description type="brief"/>
+         <location>
+            <address/>
+         </location>
+      </party>
+   </registryObject>
+   <registryObject group="Victoria University">
+      <key>vu/project/Endocranial Volumes in Waterfowl</key>
+      <originatingSource>thinkred.com.au</originatingSource>
+      <activity type="project">
+         <name type="primary">
+            <namePart>Endocranial Volumes in Waterfowl</namePart>
+         </name>
+         <description type="brief">The project was started as Patrick\'s PhD work at the Department of Zoology, the University of Melbourne in 2003 and is still ongoing. This project estimates the brain size in as many species of Anseriformes as possible to investigate the evolution of brain size in the group by using a comparative approach.
+
+This research was supported by funding from Victoria University Fellowship, the Department of Zoology and the Faculty of Science of the University of Melbourne, the David Hay Scholarship, le Fonds québécois de la recherche sur la nature et les technologies, the Academy of Natural Sciences, Philadelphia, the Field Museum of Natural History and the American Museum of Natural History. The following institutions offered access to their collection and/or logistical help: The Auckland Museum, the Australian Museum, the Bird group of the Natural History Museum at Tring, the Bishop Museum, the Canadian Museum of Nature, the Canterbury Museum, the Carnegie Museum of Natural History, CSIRO Sustainable Ecosystems, Australian National Wildlife Collection, the Department of Ornithology of the American Museum of Natural History, the Field Museum of Natural History, the Florida Museum of Natural History, the McGill University Redpath Museum, le Muséum National d’Histoire Naturelle, the Museum of New Zealand Te Papa Tongarewa, the Museum of Vertebrate Zoology, the University of California Berkeley, Museum Victoria, the Natural History Museum of Los Angeles County, the Ornithology Department of the Museum of Comparative Zoology of Harvard University, the Queen Victoria Museum and Art Gallery, the Queensland Museum, the Royal Alberta Museum, the Royal British Columbia Museum, the Royal Ontario Museum, the Sam Noble Oklahoma Museum of Natural History, the San Diego Natural History Museum, the Smithsonian Institution, the South Australian Museum, the University of Alaska Museum, the University of Kansas Natural History Museum, the University of Michigan Museum of Zoology, the University of Washington Burke Museum, the Western Australian Museum, the Yale University Peabody Museum and the Zoology Museum of the University of Copenhagen.</description>
+         <subject type="anzsrc-for">0608</subject>
+         <relatedObject>
+            <key>vu/collection/25</key>
+            <relation type="hasOutput"/>
+         </relatedObject>
+      </activity>
+   </registryObject>
+   <registryObject group="Victoria University">
+      <key>vu/collection/25</key>
+      <originatingSource>thinkred.com.au</originatingSource>
+      <collection type="collection">
+         <name type="primary">
+            <namePart>Set 2 of 2 Collections of Measurements Relating to the Evolution of Brain Size in Water Birds</namePart>
+         </name>
+         <description type="brief">The data set collects brain size estimates in as many species of Anseriformes as possible to investigate the evolution of brain size in the group by using a comparative approach. Both wild and captive specimens were examined. The skeletal measurements were recorded in the Excel file, including several data fields such as brain cavity volume, average femur least diameter / circumference, average tibiotarsus least diameter / circumference, and average tarsus least diameter / circumference. The data collection was started in Nov 2003 and is still ongoing. The dataset 2 contains nearly 400 data records which has not been published to the public yet.
+
+This research was supported by funding from Victoria University Fellowship, the Department of Zoology and the Faculty of Science of the University of Melbourne, the David Hay Scholarship, le Fonds québécois de la recherche sur la nature et les technologies, the Academy of Natural Sciences, Philadelphia, the Field Museum of Natural History and the American Museum of Natural History. The following institutions offered access to their collection and/or logistical help: The Auckland Museum, the Australian Museum, the Bird group of the Natural History Museum at Tring, the Bishop Museum, the Canadian Museum of Nature, the Canterbury Museum, the Carnegie Museum of Natural History, CSIRO Sustainable Ecosystems, Australian National Wildlife Collection, the Department of Ornithology of the American Museum of Natural History, the Field Museum of Natural History, the Florida Museum of Natural History, the McGill University Redpath Museum, le Muséum National d’Histoire Naturelle, the Museum of New Zealand Te Papa Tongarewa, the Museum of Vertebrate Zoology, the University of California Berkeley, Museum Victoria, the Natural History Museum of Los Angeles County, the Ornithology Department of the Museum of Comparative Zoology of Harvard University, the Queen Victoria Museum and Art Gallery, the Queensland Museum, the Royal Alberta Museum, the Royal British Columbia Museum, the Royal Ontario Museum, the Sam Noble Oklahoma Museum of Natural History, the San Diego Natural History Museum, the Smithsonian Institution, the South Australian Museum, the University of Alaska Museum, the University of Kansas Natural History Museum, the University of Michigan Museum of Zoology, the University of Washington Burke Museum, the Western Australian Museum, the Yale University Peabody Museum and the Zoology Museum of the University of Copenhagen.</description>
+         <rights>
+            <licence>All rights reserved – private research and study only, fair use, any other use requires contact for permission</licence>
+            <accessRights>Permission is required to access Data Set Two. Please contact Dr. Patrick Guay - Patrick.Guay@vu.edu.au for access details.</accessRights>
+         </rights>
+         <coverage>
+            <temporal>
+               <text>2003-11-01</text>
+            </temporal>
+         </coverage>
+         <location>
+            <address>
+               <electronic type="email">
+                  <value>Patrick.Guay@vu.edu.au</value>
+               </electronic>
+               <physical type="streetAddress">
+                  <addressPart type="text">Building 6, Victoria University, St Albans, VIC 3021</addressPart>
+               </physical>
+            </address>
+         </location>
+         <relatedInfo type="publication">
+            <identifier type="doi">10.1525/cond.2008.8424</identifier>
+            <title>Guay, P.-J. and Iwaniuk, A.N. (2008) Captive breeding reduces brain volume in waterfowl (Anseriformes). Condor, 110: 276-284.</title>
+         </relatedInfo>
+      </collection>
+   </registryObject>
+   <!--
+                    key = 21
+                    status = 'publish'
+                --><registryObject group="Victoria University">
+      <key>vu/person/Bahadorreza_Ofoghi</key>
+      <originatingSource>thinkred.com.au</originatingSource>
+      <party type="person">
+         <name type="primary">
+            <namePart type="title">Dr.</namePart>
+            <namePart type="given">Bahadorreza</namePart>
+            <namePart type="family">Ofoghi</namePart>
+         </name>
+         <relatedObject>
+            <key>vu/project/21</key>
+            <relation type="isMemeberOf"/>
+         </relatedObject>
+         <relatedObject>
+            <key>vu/project/21</key>
+            <relation type="isOwnerOf"/>
+         </relatedObject>
+         <location>
+            <address>
+               <electronic type="email">
+                  <value>Bahadorreza.Ofoghi@vu.edu.au</value>
+               </electronic>
+               <physical type="streetAddress">
+                  <addressPart type="text">Building L, ISEAL, Victoria University at Footscray Park, Footscray VIC 3011</addressPart>
+               </physical>
+            </address>
+         </location>
+      </party>
+   </registryObject>
+   <!--P1 call to vu_organization--><!--
+            org_school_name=''
+            org_faculty_name='INSTITUTE OF SPORT EXERCISE & ACTIVE LIVING'
+            external_org_name=''
+         --><!-- internal organisation --><registryObject group="Victoria University">
+      <key>vu.edu.au/org-INSTITUTE OF SPORT EXERCISE &amp; ACTIVE LIVING</key>
+      <originatingSource>thinkred.com.au</originatingSource>
+      <party type="group">
+         <name>
+            <namePart type="title">Institute Of Sport Exercise &amp; Active Living, Victoria University</namePart>
+         </name>
+         <description type="brief">The Institute of Sport, Exercise and Active Living (ISEAL) is the future of sport and science, and represents a new era of research and engagement in sport, exercise and active living.
+
+ISEAL's expert team of internationally recognised researchers and postgraduate students undertake multidisciplinary research in:
+
+- high performance (elite) sport;
+- community and grassroots sport, physical activity and active living;
+- basic (fundamental) research in exercise sciences;
+- applied research in social and management sciences.</description>
+         <location>
+            <address>
+               <electronic type="email">
+                  <value>iseal@vu.edu.au</value>
+               </electronic>
+               <electronic type="phone">
+                  <value>+61 3 9919 9478</value>
+               </electronic>
+            </address>
+         </location>
+         <relatedInfo>
+            <identifier type="website">http://www.vu.edu.au/institute-of-sport-exercise-and-active-living-iseal</identifier>
+            <title>URL of Faculty / School/ Institute </title>
+         </relatedInfo>
+      </party>
+   </registryObject>
+   <registryObject group="Victoria University">
+      <key>vu/person/John_Zeleznikow</key>
+      <originatingSource>thinkred.com.au</originatingSource>
+      <party type="person">
+         <name type="primary">
+            <namePart type="title">Prof.</namePart>
+            <namePart type="given">John</namePart>
+            <namePart type="family">Zeleznikow</namePart>
+         </name>
+         <identifier type="AU-ANL:PEAU">http://nla.gov.au/nla.party-614772</identifier>
+         <location>
+            <address>
+               <electronic type="email">
+                  <value>john.zeleznikow@vu.edu.au</value>
+               </electronic>
+               <physical type="streetAddress">
+                  <addressPart type="text">Building L, ISEAL, Victoria University at Footscray Park, Footscray VIC 3011</addressPart>
+               </physical>
+            </address>
+         </location>
+         <relatedObject>
+            <key>vu/project/21</key>
+            <relation type="isParticipantIn"/>
+         </relatedObject>
+      </party>
+   </registryObject>
+   <!--CO1 call to vu_organization--><!--
+            org_school_name='SCHOOL OF MANAGEMENT & INFORMATION SYSTEMS'
+            org_faculty_name=''
+            external_org_name=''
+         --><!-- internal organisation --><registryObject group="Victoria University">
+      <key>vu.edu.au/org-</key>
+      <originatingSource>thinkred.com.au</originatingSource>
+      <party type="group">
+         <name>
+            <namePart type="title"/>
+         </name>
+         <description type="brief"/>
+         <location>
+            <address/>
+         </location>
+      </party>
+   </registryObject>
+   <registryObject group="Victoria University">
+      <key>vu/person/Dan_Dwyer</key>
+      <originatingSource>thinkred.com.au</originatingSource>
+      <party type="person">
+         <name type="primary">
+            <namePart type="title">Dr.</namePart>
+            <namePart type="given">Dan</namePart>
+            <namePart type="family">Dwyer</namePart>
+         </name>
+         <location>
+            <address>
+               <physical type="streetAddress">
+                  <addressPart type="text">Building L, ISEAL, Victoria University at Footscray Park, Footscray VIC 3011</addressPart>
+               </physical>
+            </address>
+         </location>
+         <relatedObject>
+            <key>vu/project/21</key>
+            <relation type="isParticipantIn"/>
+         </relatedObject>
+      </party>
+   </registryObject>
+   <!--
+            org_school_name=''
+            org_faculty_name=''
+            external_org_name=''
+         --><!-- internal organisation --><registryObject group="Victoria University">
+      <key>vu.edu.au/org-</key>
+      <originatingSource>thinkred.com.au</originatingSource>
+      <party type="group">
+         <name>
+            <namePart type="title"/>
+         </name>
+         <description type="brief"/>
+         <location>
+            <address/>
+         </location>
+      </party>
+   </registryObject>
+   <registryObject group="Victoria University">
+      <key>vu/person/Clare_MacMahon</key>
+      <originatingSource>thinkred.com.au</originatingSource>
+      <party type="person">
+         <name type="primary">
+            <namePart type="title">Dr.</namePart>
+            <namePart type="given">Clare</namePart>
+            <namePart type="family">MacMahon</namePart>
+         </name>
+         <location>
+            <address>
+               <electronic type="email">
+                  <value>clare.macmahon@vu.edu.au</value>
+               </electronic>
+               <physical type="streetAddress">
+                  <addressPart type="text">Building L, ISEAL, Victoria University at Footscray Park, Footscray VIC 3011</addressPart>
+               </physical>
+            </address>
+         </location>
+         <relatedObject>
+            <key>vu/project/21</key>
+            <relation type="isParticipantIn"/>
+         </relatedObject>
+      </party>
+   </registryObject>
+   <!--
+            org_school_name='SCHOOL OF SPORT & EXERCISE SCIENCE'
+            org_faculty_name='FACULTY OF ARTS, EDUCATION & HUMAN DEVELOPMENT'
+            external_org_name=''
+         --><!-- internal organisation --><registryObject group="Victoria University">
+      <key>vu.edu.au/org-SCHOOL OF SPORT &amp; EXERCISE SCIENCE - FACULTY OF ARTS, EDUCATION &amp; HUMAN DEVELOPMENT</key>
+      <originatingSource>thinkred.com.au</originatingSource>
+      <party type="group">
+         <name>
+            <namePart type="title">School Of Sport &amp; Exercise Science, Victoria University</namePart>
+         </name>
+         <description type="brief">The School of Sport and Exercise Science is a leading provider of education and research programs in sport and exercise science and recreation. The school has a rich and vibrant research culture that is internationally recognised. Its large group of academic research scholars, post doctoral fellows, PhD candidates and honours students, in collaboration with the Institute of Sport, Exercise and Active Living (ISEAL), engages in a wide range of research projects across the following disciplines:
+
+- Anatomy and Kinesiology;
+- Biomechanics and Technology;
+- Exercise Physiology and Biochemistry;
+- Exercise Rehabilitation;
+- Motor Control, Motor Learning and Skilled Performance;
+- Philosophy and Ethics of Sport;
+- Physical Activity, Health and Active Living;
+- Physical Education and Health;
+- Sport and Exercise Psychology;
+- Sport and Recreation Management;
+- Sport History and Sociology.</description>
+         <location>
+            <address>
+               <electronic type="phone">
+                  <value>+61 3 9919 4129</value>
+               </electronic>
+            </address>
+         </location>
+         <relatedInfo>
+            <identifier type="website">http://www.vu.edu.au/higher-ed-and-tafe/arts-education-and-human-development/sport-and-exercise-science</identifier>
+            <title>URL of Faculty / School/ Institute </title>
+         </relatedInfo>
+      </party>
+   </registryObject>
+   <registryObject group="Victoria University">
+      <key>vu/project/Data Mining in Track Cycling Omnium Competitions</key>
+      <originatingSource>thinkred.com.au</originatingSource>
+      <activity type="project">
+         <name type="primary">
+            <namePart>Data Mining in Track Cycling Omnium Competitions</namePart>
+         </name>
+         <description type="brief">The omnium is a newly introduced track cycling competition to be included in the London 2012 Olympic Games. It involves six individual events and, therefore, requires strategic planning for riders and coaches to achieve the best overall standing in terms of the ranking, speed, and time in each individual component.
+
+The goal of the project was to identifiy winning performance patterns of riders in the omnium based on the performance results. The unsupervised, supervised, and statistical analyses have been conducted on the men’s and women’s historical competition data in the World Championships since 2008 to find winning patterns for each gender in terms of the ranking of riders in each individual event.
+
+The project was started in January 2010 and is ongoing.</description>
+         <subject type="anzsrc-for">1106</subject>
+         <subject type="anzsrc-for">0801</subject>
+         <coverage>
+            <temporal>
+               <text>01/01/2010</text>
+            </temporal>
+         </coverage>
+         <relatedObject>
+            <key>vu/collection/21</key>
+            <relation type="hasOutput"/>
+         </relatedObject>
+      </activity>
+   </registryObject>
+   <registryObject group="Victoria University">
+      <key>vu/collection/21</key>
+      <originatingSource>thinkred.com.au</originatingSource>
+      <collection type="collection">
+         <name type="primary">
+            <namePart>Collection of Performance Measurements in Track Cycling Omnium Competitions</namePart>
+         </name>
+         <description type="brief">This dataset includes performance results of riders in international track cycling omnium competitions. The dataset mainly consists of the rankings of riders in each of the six individual events of the omnium as well as the overall placings of the riders. The goal of the project was to identifiy winning performance patterns of riders in the omnium, which is a newly introduced competition to the Olympic Games to be held for the first time in London 2012 Olympic Games.
+
+The keywords are \'Track Cyling Omnium\' and \'Performance Results / Analysis\'.</description>
+         <rights>
+            <licence>All rights reserved – private research and study only, fair use, any other use requires contact for permission</licence>
+            <accessRights>Permission is required to access the dataset. Please contact Dr. Bahadorreza Ofoghi - Bahadorreza.Ofoghi@vu.edu.au for access details.</accessRights>
+         </rights>
+         <coverage>
+            <temporal>
+               <text>2008-01-01</text>
+               <text>2011-12-31</text>
+            </temporal>
+         </coverage>
+         <relatedInfo>
+            <identifier type="website">http://www.tissottiming.com</identifier>
+            <title>URL of Collection / Data Set</title>
+         </relatedInfo>
+         <location>
+            <address>
+               <physical type="streetAddress">
+                  <addressPart type="text">Building L, ISEAL, Victoria University at Footscray Park, Footscray VIC 3011</addressPart>
+               </physical>
+            </address>
+         </location>
+         <relatedInfo type="publication">
+            <identifier type="doi">10.1007/978-3-642-15286-3_7</identifier>
+            <title>Bahadorreza Ofoghi, John Zeleznikow, Clare MacMahon, and Dan Dwyer (2010) A machine learning approach to predicting winning patterns in track cycling omnium. In Proceedings of the International Federation for Information Processing (IFIP) Conference on Advances in Information and Communication Technology (Springer Verlag), Brisbane, Australia.</title>
+         </relatedInfo>
+      </collection>
+   </registryObject>
+   <!--
+                    key = 22
+                    status = ''
+                --></registryObjects>
+

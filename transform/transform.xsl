@@ -27,9 +27,8 @@
             <xsl:for-each-group select="table" group-by="distinct-values(column[@name='id'])">
 
                 <xsl:comment>
-                    <VU_research_item>
-                        <xsl:value-of select="current-grouping-key()"/>
-                    </VU_research_item>
+                    key = <xsl:value-of select="current-grouping-key()"/>
+                    status = '<xsl:value-of select="current-group()/column[@name= 'field_key' and text()='internal_status']/parent::node()/column[@name= 'meta_value']/text()"/>'
                 </xsl:comment>
                
                 <!-- create RIFCS items only if status is 'publish'-->
@@ -38,6 +37,7 @@
 
                     <xsl:call-template name="primaryInvestigator"/>
 
+                    <xsl:comment>P1 call to vu_organization</xsl:comment>
                     <xsl:call-template name="vu_organization">
                         <xsl:with-param name="org_school_name">
                             <xsl:value-of
@@ -49,17 +49,28 @@
                                 select="current-group()//column[@name= 'field_key' and text()='p1_faculty']/parent::node()/column[@name= 'meta_value']/text()"
                                 disable-output-escaping="yes"/>
                         </xsl:with-param>
+                        <xsl:with-param name="vu_internal">
+                            <xsl:value-of
+                                select="current-group()//column[@name= 'field_key' and text()='p1_internal']/parent::node()/column[@name= 'meta_value']/text()"
+                                disable-output-escaping="yes"/>
+                        </xsl:with-param>
                         <xsl:with-param name="external_org_name">
                             <xsl:value-of
                                 select="current-group()//column[@name= 'field_key' and text()='p1_external_org_name']/parent::node()/column[@name= 'meta_value']/text()"
                                 disable-output-escaping="yes"/>
                         </xsl:with-param>
+                        <xsl:with-param name="external_org_ands_id"
+                           ><xsl:value-of
+                                select="current-group()//column[@name= 'field_key' and text()='p1_external_org_key']/parent::node()/column[@name= 'meta_value']/text()"
+                                disable-output-escaping="yes"
+                                /></xsl:with-param>
                     </xsl:call-template>
 
                     <xsl:if
                         test="current-group()//column[@name='field_key'and text()='has_co1']/parent::node()/column[@name= 'meta_value']/text()='Yes'">
                         <xsl:call-template name="CoInvestigator_1"/>
-
+<!-- TODO: add vu_internal and external to these guys -->
+                    <xsl:comment>CO1 call to vu_organization</xsl:comment>
                         <xsl:call-template name="vu_organization">
                             <xsl:with-param name="org_school_name">
                                 <xsl:value-of
@@ -758,11 +769,26 @@
     <xsl:template name="vu_organization">
         <xsl:param name="org_school_name"/>
         <xsl:param name="org_faculty_name"/>
+        <xsl:param name="vu_internal"/>
         <xsl:param name="external_org_name"/>
+        <xsl:param name="external_org_ands_id"/>
 
-        <xsl:if test="current-group()//column[@name='field_key']='p1_external_org_name'">
+        <!-- <xsl:if test="current-group()//column[@name='field_key']='p1_external_org_name'"> -->
+         <xsl:comment>
+            org_school_name='<xsl:value-of select="$org_school_name"/>'
+            org_faculty_name='<xsl:value-of select="$org_faculty_name"/>'
+            external_org_name='<xsl:value-of select="$external_org_name"/>'
+         </xsl:comment>
 
+        <xsl:choose>
+        <xsl:when test="$external_org_ands_id and $external_org_ands_id!=''">
+            <xsl:comment> Org already in ANDS so don't output. ID='<xsl:value-of select="$external_org_ands_id"/>'</xsl:comment>
+        </xsl:when>
 
+        <xsl:when test="$vu_internal = 'No'">
+            <xsl:comment> external organization </xsl:comment>
+            <xsl:variable name="org_ext_id"
+                select="$externalOrg//Department[Faculty=$external_org_name]/@id"/>
             <xsl:variable name="org_ext_displayname"
                 select="$externalOrg//Department[Faculty=$external_org_name]/DisplayName/text()"/>
             <xsl:variable name="org_description"
@@ -776,9 +802,9 @@
             <xsl:variable name="org_phone"
                 select="$externalOrg//Department[Faculty=$external_org_name]/Phone/text()"/>
 
-            <xsl:comment> external organization </xsl:comment>
-            <registryObject group="Victoria University">
-                <key>vu/org/</key>
+            <xsl:element name="registryObject">
+                <xsl:attribute name="group"><xsl:value-of select="$external_org_name"/></xsl:attribute>
+                <key>vu.edu.au/org-<xsl:value-of select="$org_ext_id"/></key>
                 <originatingSource>
                     <xsl:value-of select="$originating_source"/>
                 </originatingSource>
@@ -825,32 +851,30 @@
                         </relatedInfo>
                     </xsl:if>
                 </party>
-            </registryObject>
-        </xsl:if>
-
-
-
-
-        <xsl:if test="current-group()//column[@name='field_key']='p1_faculty'">
-
-
+            </xsl:element>
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:comment> internal organisation </xsl:comment>
+           <!--
+           <xsl:if test="current-group()//column[@name='field_key']='p1_faculty'">
+           -->
+            <xsl:variable name="org_id"
+                select="$internalOrg//Department[Faculty=$org_faculty_name and Name=$org_school_name]/@id"/>
             <xsl:variable name="org_displayname"
                 select="$internalOrg//Department[Faculty=$org_faculty_name and Name=$org_school_name]/DisplayName/text()"/>
-
             <xsl:variable name="org_description"
-                select="$internalOrg//Department[Faculty=$org_faculty_name]/Description/text()"/>
+                select="$internalOrg//Department[Faculty=$org_faculty_name and Name=$org_school_name]/Description/text()"/>
             <xsl:variable name="org_website"
-                select="$internalOrg//Department[Faculty=$org_faculty_name]/Website/text()"/>
+                select="$internalOrg//Department[Faculty=$org_faculty_name and Name=$org_school_name]/Website/text()"/>
             <xsl:variable name="org_email"
-                select="$internalOrg//Department[Faculty=$org_faculty_name]/Email/text()"/>
+                select="$internalOrg//Department[Faculty=$org_faculty_name and Name=$org_school_name]/Email/text()"/>
             <xsl:variable name="org_address"
-                select="$internalOrg//Department[Faculty=$org_faculty_name]/Address/text()"/>
+                select="$internalOrg//Department[Faculty=$org_faculty_name and Name=$org_school_name]/Address/text()"/>
             <xsl:variable name="org_phone"
-                select="$internalOrg//Department[Faculty=$org_faculty_name]/Phone/text()"/>
+                select="$internalOrg//Department[Faculty=$org_faculty_name and Name=$org_school_name]/Phone/text()"/>
 
-            <xsl:comment> internal organization </xsl:comment>
             <registryObject group="Victoria University">
-                <key>vu/org/</key>
+                <key>vu.edu.au/org-<xsl:value-of select="$org_id"/></key>
                 <originatingSource>
                     <xsl:value-of select="$originating_source"/>
                 </originatingSource>
@@ -898,9 +922,9 @@
                     </xsl:if>
                 </party>
             </registryObject>
+        </xsl:otherwise>
 
-
-        </xsl:if>
+        </xsl:choose>
 
     </xsl:template>
 
