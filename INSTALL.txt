@@ -5,8 +5,8 @@
 2. A public SSH key imported into your NeCTAR account, or a created keypair with the
   downloaded key setup for SSH access.
 3. A NeCTAR Security Group (eg. default) configured to allow access to ports 80 (HTTP) and 22 (SSH).
-4. A dynamic domain name with username and password, www.dnsdynamic.org recommended.  [optional]
-
+4. A Formidable Pro license will be required later on in the process.  http://formidablepro.com/
+5. A dynamic domain name with username and password, www.dnsdynamic.org recommended.  [optional]
 
 
 === INSTALLATION NOTES ===
@@ -81,6 +81,8 @@ Note:  Once a form-entry owner (User ID) is deleted the entry is harder to acces
 
 Remove any old Users from the WordPress admin menu.  Be sure to leave "admin".
 
+Register the site with your own Formidable Pro license.
+  Formidable > Settings > "Deauthorize", then "Enter new credentials"
 
 
 === CUSTOMISING THE INSTANCE ===
