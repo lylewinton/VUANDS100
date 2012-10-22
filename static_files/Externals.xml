@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Departments>
+	<Department id="VICTORIAN INSTITUTE OF SPORT (VIS)">
+		<Name/>
+		<DisplayName>Victorian Institute Of Sport (Vis)</DisplayName>
+		<Faculty>Victorian Institute of Sport (VIS)</Faculty>
+		<Description>The VIS was set up to assist the development of Victoria's best athletes. It was established in 1990 by the State Government as a private trustee company, with its Board of Directors appointed by the Victorian Minister for Sport. The VIS is funded by the State Government through Sport and Recreation Victoria, the Commonwealth Government through the Australian Sports Commission and numerous corporate sector sponsors. The VIS provides programs in partnership with State Sporting Organisations, and also offers advanced and specialised coaching, sports science and sports medicine services, career and education advice, and training and competition support are provided to VIS athletes, as well as offering emerging elite athletes from country Victoria assistance through Regional Academy of Sport programs.</Description>
+		<Website>http://www.vis.org.au/</Website>
+		<Email/>
+		<Address>PO Box 12608, A'Beckett St, Melbourne VIC 8006</Address>
+		<Phone>+61 3 9425 0100
++61 3 9425 0000</Phone>
+	</Department>
+</Departments>

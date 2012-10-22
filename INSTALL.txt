@@ -1,0 +1,105 @@
+
+=== PREREQUISITES ===
+
+1. An AAF account for access to NeCTAR.
+2. A public SSH key imported into your NeCTAR account, or a created keypair with the
+  downloaded key setup for SSH access.
+3. A NeCTAR Security Group (eg. default) configured to allow access to ports 80 (HTTP) and 22 (SSH).
+4. A dynamic domain name with username and password, www.dnsdynamic.org recommended.  [optional]
+
+
+
+=== INSTALLATION NOTES ===
+
+* Login to the NECTAR Dashboard using you AAF credentials.
+https://dashboard.rc.nectar.org.au/nova/
+
+* Search for the appropriate base image under the "Images & Snapshots" section, eg. VU-ANDS-base20121019
+
+* Launch the approriate image, a small flavor is sufficient, remember to select your keypair
+and the right secuirty group.
+
+You'll need to provide 5 lines of "User Data" to start the image.  The first line is a
+hostname for dynamic DNS, or start with a hash for none.  Next 2 lines are username and
+password for dynamic DNS, provide dummy values if you have none.  The 4th line is the
+(non-root) username and password that WordPress will use to connect to the database, your choice.
+eg.
+
+------------------------
+#ands.vicuni.dnsd.info
+nouser
+nopass
+dbuser
+dbpass534231
+------------------------
+
+* Configure WordPress's new URL by loggin in as administrator.  You must directly access the login
+URL then directly access the Settings/General URL.  Example IP address used below.
+NOTE:  Use direct URLs only!  Or the site will forward you to the wrong (configured) URL.
+
+Login:
+http://115.146.95.168/ands2/wp-login.php
+Username:  admin
+Password:  Xy4SE9TP2sQT
+Settings/General:
+http://115.146.95.168/ands2/wp-admin/options-general.php
+
+* Update the post-registration URL...
+http://115.146.95.168/ands2/wp-admin/options-general.php?page=wplogin_redirect.php
+
+* Update the "Login with Ajax" global logout redirect URL...
+http://115.146.95.168/ands2/wp-admin/options-general.php?page=login-with-ajax
+
+
+
+=== SECURING THE INSTANCE ===
+
+Remove any old SSH key lines from /home/ubuntu/.ssh/authorized_keys , but be sure to leave your own.
+   $  ssh ubuntu@115.146.95.168
+   $  pico /home/ubuntu/.ssh/authorized_keys
+
+Change the root password of the MySQL database server.
+   $  ssh ubuntu@115.146.95.168
+   $  mysqladmin -u root -pmypassword123 password "NewPassword"
+   $  pico /home/ubunut/root
+   ### modify any references to the old root password
+
+Using the phpMyAdmin interface to MySQL drop any unused database users:
+   http://115.146.95.168/phpmyadmin/
+   localhost
+   Privileges
+   (select unwanted users, especially those where Host=%)
+   Remove selected users (section) -> Go
+
+Login via WordPress and change the "admin" account's password.
+   http://115.146.95.168/ands2/wp-admin/
+   Username:  admin
+   Password:  Xy4SE9TP2sQT
+
+Remove any old Formidable/Form-Entries from the WordPress admin menu.
+Note:  Once a form-entry owner (User ID) is deleted the entry is harder to access.
+
+Remove any old Users from the WordPress admin menu.  Be sure to leave "admin".
+
+
+
+=== CUSTOMISING THE INSTANCE ===
+
+In WordPress you should customise the look and feel of the site...
+
+Settings > General   - Site Title, Tagline, E-mail Address
+
+Formidable > Forms > ANDS v100 > Settings > Email  - Modify email addresses in the settings.
+
+Formidable > Forms > ANDS v100 > Edit  - Modify the default copyright statement.
+
+Appearance > Header  - Select a new header image
+
+Appearance > Theme   - Changing theme is possible but requires browser testing.  Graphene works best with the VU SOE.
+
+Appearance > Menu    - Change "Main Menu" if required.
+
+Pages > All Pages    - You'll need to customise text in Home, About RDA.
+
+Posts > All Posts    - Posts aren't really used, but if you start using them you should modify existing entries.
+

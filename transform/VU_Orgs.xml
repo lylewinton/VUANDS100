@@ -1,0 +1,947 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Departments>
+	<Department id="FACULTY OFFICE - FACULTY OF ARTS, EDUCATION &amp; HUMAN DEVELOPMENT">
+		<Name>FACULTY OFFICE</Name>
+		<DisplayName>Faculty Office, Victoria University</DisplayName>
+		<Faculty>FACULTY OF ARTS, EDUCATION &amp; HUMAN DEVELOPMENT</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="OFFICE OF THE EXECUTIVE DEAN - FACULTY OF ARTS, EDUCATION &amp; HUMAN DEVELOPMENT">
+		<Name>OFFICE OF THE EXECUTIVE DEAN</Name>
+		<DisplayName>Office Of The Executive Dean, Victoria University</DisplayName>
+		<Faculty>FACULTY OF ARTS, EDUCATION &amp; HUMAN DEVELOPMENT</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="SCHOOL OF COMMUNICATION &amp; THE ARTS - FACULTY OF ARTS, EDUCATION &amp; HUMAN DEVELOPMENT">
+		<Name>SCHOOL OF COMMUNICATION &amp; THE ARTS</Name>
+		<DisplayName>School Of Communication &amp; The Arts, Victoria University</DisplayName>
+		<Faculty>FACULTY OF ARTS, EDUCATION &amp; HUMAN DEVELOPMENT</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="SCHOOL OF EDUCATION - FACULTY OF ARTS, EDUCATION &amp; HUMAN DEVELOPMENT">
+		<Name>SCHOOL OF EDUCATION</Name>
+		<DisplayName>School Of Education, Victoria University</DisplayName>
+		<Faculty>FACULTY OF ARTS, EDUCATION &amp; HUMAN DEVELOPMENT</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="SCHOOL OF SOCIAL SCIENCES &amp; PSYCHOLOGY - FACULTY OF ARTS, EDUCATION &amp; HUMAN DEVELOPMENT">
+		<Name>SCHOOL OF SOCIAL SCIENCES &amp; PSYCHOLOGY</Name>
+		<DisplayName>School Of Social Sciences &amp; Psychology, Victoria University</DisplayName>
+		<Faculty>FACULTY OF ARTS, EDUCATION &amp; HUMAN DEVELOPMENT</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="SCHOOL OF SPORT &amp; EXERCISE SCIENCE - FACULTY OF ARTS, EDUCATION &amp; HUMAN DEVELOPMENT">
+		<Name>SCHOOL OF SPORT &amp; EXERCISE SCIENCE</Name>
+		<DisplayName>School Of Sport &amp; Exercise Science, Victoria University</DisplayName>
+		<Faculty>FACULTY OF ARTS, EDUCATION &amp; HUMAN DEVELOPMENT</Faculty>
+		<Description>The School of Sport and Exercise Science is a leading provider of education and research programs in sport and exercise science and recreation. The school has a rich and vibrant research culture that is internationally recognised. Its large group of academic research scholars, post doctoral fellows, PhD candidates and honours students, in collaboration with the Institute of Sport, Exercise and Active Living (ISEAL), engages in a wide range of research projects across the following disciplines:
+
+- Anatomy and Kinesiology;
+- Biomechanics and Technology;
+- Exercise Physiology and Biochemistry;
+- Exercise Rehabilitation;
+- Motor Control, Motor Learning and Skilled Performance;
+- Philosophy and Ethics of Sport;
+- Physical Activity, Health and Active Living;
+- Physical Education and Health;
+- Sport and Exercise Psychology;
+- Sport and Recreation Management;
+- Sport History and Sociology.</Description>
+		<Website>http://www.vu.edu.au/higher-ed-and-tafe/arts-education-and-human-development/sport-and-exercise-science</Website>
+		<Email/>
+		<Address>L122, Victoria University at Footscray Park, Footscray VIC 3011</Address>
+		<Phone>+61 3 9919 4129</Phone>
+	</Department>
+	<Department id="AUSTRALIA COMMUNITY CENTRE FOR DIABETES">
+		<Name/>
+		<DisplayName>Australia Community Centre For Diabetes, Victoria University</DisplayName>
+		<Faculty>AUSTRALIA COMMUNITY CENTRE FOR DIABETES</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="BUSINESS COMPUTING SUPPORT - FACULTY OF BUSINESS &amp; LAW">
+		<Name>BUSINESS COMPUTING SUPPORT</Name>
+		<DisplayName>Business Computing Support, Victoria University</DisplayName>
+		<Faculty>FACULTY OF BUSINESS &amp; LAW</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="CENTRE FOR STRATEGIC &amp; ECONOMIC STUDIES - FACULTY OF BUSINESS &amp; LAW">
+		<Name>CENTRE FOR STRATEGIC &amp; ECONOMIC STUDIES</Name>
+		<DisplayName>Centre For Strategic &amp; Economic Studies, Victoria University</DisplayName>
+		<Faculty>FACULTY OF BUSINESS &amp; LAW</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="CENTRE FOR TOURISM &amp; SERVICES RESEARCH - FACULTY OF BUSINESS &amp; LAW">
+		<Name>CENTRE FOR TOURISM &amp; SERVICES RESEARCH</Name>
+		<DisplayName>Centre For Tourism &amp; Services Research, Victoria University</DisplayName>
+		<Faculty>FACULTY OF BUSINESS &amp; LAW</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="CENTRE FOR WORK INTEGRATED LEARNING - FACULTY OF BUSINESS &amp; LAW">
+		<Name>CENTRE FOR WORK INTEGRATED LEARNING</Name>
+		<DisplayName>Centre For Work Integrated Learning, Victoria University</DisplayName>
+		<Faculty>FACULTY OF BUSINESS &amp; LAW</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="EDUCATIONAL DEVELOPMENT UNIT - FACULTY OF BUSINESS &amp; LAW">
+		<Name>EDUCATIONAL DEVELOPMENT UNIT</Name>
+		<DisplayName>Educational Development Unit, Victoria University</DisplayName>
+		<Faculty>FACULTY OF BUSINESS &amp; LAW</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="EXECUTIVE EDUCATION UNIT - FACULTY OF BUSINESS &amp; LAW">
+		<Name>EXECUTIVE EDUCATION UNIT</Name>
+		<DisplayName>Executive Education Unit, Victoria University</DisplayName>
+		<Faculty>FACULTY OF BUSINESS &amp; LAW</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="FACULTY OFFICE - FACULTY OF BUSINESS &amp; LAW">
+		<Name>FACULTY OFFICE</Name>
+		<DisplayName>Faculty Office, Victoria University</DisplayName>
+		<Faculty>FACULTY OF BUSINESS &amp; LAW</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="FULL FEE BUSINESS &amp; LAW - FACULTY OF BUSINESS &amp; LAW">
+		<Name>FULL FEE BUSINESS &amp; LAW</Name>
+		<DisplayName>Full Fee Business &amp; Law, Victoria University</DisplayName>
+		<Faculty>FACULTY OF BUSINESS &amp; LAW</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="MARKETING OFFICE - FACULTY OF BUSINESS &amp; LAW">
+		<Name>MARKETING OFFICE</Name>
+		<DisplayName>Marketing Office, Victoria University</DisplayName>
+		<Faculty>FACULTY OF BUSINESS &amp; LAW</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="OFFICE OF THE EXECUTIVE DEAN - FACULTY OF BUSINESS &amp; LAW">
+		<Name>OFFICE OF THE EXECUTIVE DEAN</Name>
+		<DisplayName>Office Of The Executive Dean, Victoria University</DisplayName>
+		<Faculty>FACULTY OF BUSINESS &amp; LAW</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="PUBLIC SECTOR MANAGEMENT UNIT - FACULTY OF BUSINESS &amp; LAW">
+		<Name>PUBLIC SECTOR MANAGEMENT UNIT</Name>
+		<DisplayName>Public Sector Management Unit, Victoria University</DisplayName>
+		<Faculty>FACULTY OF BUSINESS &amp; LAW</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="SCHOOL OF ACCOUNTING &amp; FINANCE - FACULTY OF BUSINESS &amp; LAW">
+		<Name>SCHOOL OF ACCOUNTING &amp; FINANCE</Name>
+		<DisplayName>School Of Accounting &amp; Finance, Victoria University</DisplayName>
+		<Faculty>FACULTY OF BUSINESS &amp; LAW</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="SCHOOL OF INTERNATIONAL BUSINESS - FACULTY OF BUSINESS &amp; LAW">
+		<Name>SCHOOL OF INTERNATIONAL BUSINESS</Name>
+		<DisplayName>School Of International Business, Victoria University</DisplayName>
+		<Faculty>FACULTY OF BUSINESS &amp; LAW</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="SCHOOL OF MANAGEMENT &amp; INFORMATION SYSTEMS - FACULTY OF BUSINESS &amp; LAW">
+		<Name>SCHOOL OF MANAGEMENT &amp; INFORMATION SYSTEMS</Name>
+		<DisplayName>School Of Management &amp; Information Systems, Victoria University</DisplayName>
+		<Faculty>FACULTY OF BUSINESS &amp; LAW</Faculty>
+		<Description>The school is actively involved in a number of research areas. We encourage research that involves working with industry partners to solve real-world problems. Some of our key research areas and strengths include:
+
+- Change management;
+- Computer support and intelligent systems;
+- E-business solutions;
+Enterprise Resource Planning (ERP) systems;
+- Human resources management;
+- Knowledge management;
+- Global logistics and supply chain management;
+- Online education and e-learning;
+- Public sector management;
+- Supply chain networks and modelling;
+- Industrial relations;
+- Human resource development.</Description>
+		<Website>http://www.vu.edu.au/higher-ed-and-tafe/business-and-law/management-and-information-systems</Website>
+		<Email>busmis@vu.edu.au</Email>
+		<Address>G453, Victoria University at Footscray Park, Footscray VIC 3011</Address>
+		<Phone>+61 3 9919 4535</Phone>
+	</Department>
+	<Department id="SIR ZELMAN COWEN CENTRE - FACULTY OF BUSINESS &amp; LAW">
+		<Name>SIR ZELMAN COWEN CENTRE</Name>
+		<DisplayName>Sir Zelman Cowen Centre, Victoria University</DisplayName>
+		<Faculty>FACULTY OF BUSINESS &amp; LAW</Faculty>
+		<Description>The Governance Research Program sits within the VLS, and aims to improve governance of the private and public sectors through the use of independent academic research, consultancies and postgraduate teaching. The VLS encourages research that involves working with industry partners to solve real-world problems. Research is undertaken by academic staff members and research students as well as the faculty's research centres:
+- Centre for Strategic Economic Studies (CSES)
+- Centre for Tourism and Services Research (CTSR)</Description>
+		<Website>http://www.vu.edu.au/higher-ed-and-tafe/business-and-law/victoria-law-school</Website>
+		<Email>law.school@vu.edu.au</Email>
+		<Address>Level 1, Victoria University Queens Street Campus, 295 Queens St, Melbourne.</Address>
+		<Phone>+61 3 9919 1840</Phone>
+	</Department>
+	<Department id="VICTORIA LAW SCHOOL - FACULTY OF BUSINESS &amp; LAW">
+		<Name>VICTORIA LAW SCHOOL</Name>
+		<DisplayName>Victoria Law School, Victoria University</DisplayName>
+		<Faculty>FACULTY OF BUSINESS &amp; LAW</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="CURRICULUM INNOVATION UNIT">
+		<Name/>
+		<DisplayName>Curriculum Innovation Unit, Victoria University</DisplayName>
+		<Faculty>CURRICULUM INNOVATION UNIT</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="DEVELOPMENT">
+		<Name/>
+		<DisplayName>Development, Victoria University</DisplayName>
+		<Faculty>DEVELOPMENT</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="ENGAGEMENT &amp; PARTNERSHIPS">
+		<Name/>
+		<DisplayName>Engagement &amp; Partnerships, Victoria University</DisplayName>
+		<Faculty>ENGAGEMENT &amp; PARTNERSHIPS</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="GOVERNANCE &amp; POLICY">
+		<Name/>
+		<DisplayName>Governance &amp; Policy, Victoria University</DisplayName>
+		<Faculty>GOVERNANCE &amp; POLICY</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="CENTRE FOR ENVIRONMENT SAFETY &amp; RISK ENGINEERI - FACULTY OF HEALTH, ENGINEERING &amp; SCIENCE">
+		<Name>CENTRE FOR ENVIRONMENT SAFETY &amp; RISK ENGINEERI</Name>
+		<DisplayName>Centre For Environment Safety &amp; Risk Engineeri, Victoria University</DisplayName>
+		<Faculty>FACULTY OF HEALTH, ENGINEERING &amp; SCIENCE</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="CENTRE FOR TELECOMMUNICATION &amp; MICROELECTRONIC - FACULTY OF HEALTH, ENGINEERING &amp; SCIENCE">
+		<Name>CENTRE FOR TELECOMMUNICATION &amp; MICROELECTRONIC</Name>
+		<DisplayName>Centre For Telecommunication &amp; Microelectronic, Victoria University</DisplayName>
+		<Faculty>FACULTY OF HEALTH, ENGINEERING &amp; SCIENCE</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="FACULTY ADMINISTRATION - FACULTY OF HEALTH, ENGINEERING &amp; SCIENCE">
+		<Name>FACULTY ADMINISTRATION</Name>
+		<DisplayName>Faculty Administration, Victoria University</DisplayName>
+		<Faculty>FACULTY OF HEALTH, ENGINEERING &amp; SCIENCE</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="FOUNDATION STUDIES - FACULTY OF HEALTH, ENGINEERING &amp; SCIENCE">
+		<Name>FOUNDATION STUDIES</Name>
+		<DisplayName>Foundation Studies, Victoria University</DisplayName>
+		<Faculty>FACULTY OF HEALTH, ENGINEERING &amp; SCIENCE</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="OFFICE OF THE EXECUTIVE DEAN - FACULTY OF HEALTH, ENGINEERING &amp; SCIENCE">
+		<Name>OFFICE OF THE EXECUTIVE DEAN</Name>
+		<DisplayName>Office Of The Executive Dean, Victoria University</DisplayName>
+		<Faculty>FACULTY OF HEALTH, ENGINEERING &amp; SCIENCE</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="SCHOOL OF BIOMEDICAL &amp; HEALTH SCIENCES - FACULTY OF HEALTH, ENGINEERING &amp; SCIENCE">
+		<Name>SCHOOL OF BIOMEDICAL &amp; HEALTH SCIENCES</Name>
+		<DisplayName>School Of Biomedical &amp; Health Sciences, Victoria University</DisplayName>
+		<Faculty>FACULTY OF HEALTH, ENGINEERING &amp; SCIENCE</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="SCHOOL OF ENGINEERING &amp; SCIENCE - FACULTY OF HEALTH, ENGINEERING &amp; SCIENCE">
+		<Name>SCHOOL OF ENGINEERING &amp; SCIENCE</Name>
+		<DisplayName>School Of Engineering &amp; Science, Victoria University</DisplayName>
+		<Faculty>FACULTY OF HEALTH, ENGINEERING &amp; SCIENCE</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="SCHOOL OF NURSING &amp; MIDWIFERY - FACULTY OF HEALTH, ENGINEERING &amp; SCIENCE">
+		<Name>SCHOOL OF NURSING &amp; MIDWIFERY</Name>
+		<DisplayName>School Of Nursing &amp; Midwifery, Victoria University</DisplayName>
+		<Faculty>FACULTY OF HEALTH, ENGINEERING &amp; SCIENCE</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="INNOVATION &amp; COMMERCIAL DEVELOPMENT">
+		<Name/>
+		<DisplayName>Innovation &amp; Commercial Development, Victoria University</DisplayName>
+		<Faculty>INNOVATION &amp; COMMERCIAL DEVELOPMENT</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="INST FOR COMMUNITY ETHNICITY &amp; POLICY ALTERNAT">
+		<Name/>
+		<DisplayName>Inst For Community Ethnicity &amp; Policy Alternat, Victoria University</DisplayName>
+		<Faculty>INST FOR COMMUNITY ETHNICITY &amp; POLICY ALTERNAT</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="INSTITUTE FOR DIVERSITY EDUCATIONAL ACCESS &amp; SUCCE">
+		<Name/>
+		<DisplayName>Institute For Diversity Educational Access &amp; Succe, Victoria University</DisplayName>
+		<Faculty>INSTITUTE FOR DIVERSITY EDUCATIONAL ACCESS &amp; SUCCE</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="INSTITUTE FOR SUPPLY CHAIN &amp; LOGISTICS">
+		<Name/>
+		<DisplayName>Institute For Supply Chain &amp; Logistics, Victoria University</DisplayName>
+		<Faculty>INSTITUTE FOR SUPPLY CHAIN &amp; LOGISTICS</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="INSTITUTE FOR SUSTAINABILITY &amp; INNOVATION">
+		<Name/>
+		<DisplayName>Institute For Sustainability &amp; Innovation, Victoria University</DisplayName>
+		<Faculty>INSTITUTE FOR SUSTAINABILITY &amp; INNOVATION</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="INSTITUTE OF SPORT EXERCISE &amp; ACTIVE LIVING">
+		<Name/>
+		<DisplayName>Institute Of Sport Exercise &amp; Active Living, Victoria University</DisplayName>
+		<Faculty>INSTITUTE OF SPORT EXERCISE &amp; ACTIVE LIVING</Faculty>
+		<Description>The Institute of Sport, Exercise and Active Living (ISEAL) is the future of sport and science, and represents a new era of research and engagement in sport, exercise and active living.
+
+ISEAL's expert team of internationally recognised researchers and postgraduate students undertake multidisciplinary research in:
+
+- high performance (elite) sport;
+- community and grassroots sport, physical activity and active living;
+- basic (fundamental) research in exercise sciences;
+- applied research in social and management sciences.</Description>
+		<Website>http://www.vu.edu.au/institute-of-sport-exercise-and-active-living-iseal</Website>
+		<Email>iseal@vu.edu.au</Email>
+		<Address>Building L, ISEAL, Victoria University at Footscray Park, Footscray VIC 3011</Address>
+		<Phone>+61 3 9919 9478</Phone>
+	</Department>
+	<Department id="CAMPUS LIBRARIES - LIBRARY">
+		<Name>CAMPUS LIBRARIES</Name>
+		<DisplayName>Campus Libraries, Victoria University</DisplayName>
+		<Faculty>LIBRARY</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="CORPORATE SERVICES - LIBRARY">
+		<Name>CORPORATE SERVICES</Name>
+		<DisplayName>Corporate Services, Victoria University</DisplayName>
+		<Faculty>LIBRARY</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="DIGITAL &amp; STUDENT COMPUTER SERVICES - LIBRARY">
+		<Name>DIGITAL &amp; STUDENT COMPUTER SERVICES</Name>
+		<DisplayName>Digital &amp; Student Computer Services, Victoria University</DisplayName>
+		<Faculty>LIBRARY</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="INFORMATION RESOURCES &amp; COLLECTION SERVICES - LIBRARY">
+		<Name>INFORMATION RESOURCES &amp; COLLECTION SERVICES</Name>
+		<DisplayName>Information Resources &amp; Collection Services, Victoria University</DisplayName>
+		<Faculty>LIBRARY</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="LIBRARY EDUCATION &amp; RESEARCH SUPPORT - LIBRARY">
+		<Name>LIBRARY EDUCATION &amp; RESEARCH SUPPORT</Name>
+		<DisplayName>Library Education &amp; Research Support, Victoria University</DisplayName>
+		<Faculty>LIBRARY</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="LIBRARY SERVICES - LIBRARY">
+		<Name>LIBRARY SERVICES</Name>
+		<DisplayName>Library Services, Victoria University</DisplayName>
+		<Faculty>LIBRARY</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="OFFICE OF ASSOCIATE LIBRARIAN INFORMATION SRVS - LIBRARY">
+		<Name>OFFICE OF ASSOCIATE LIBRARIAN INFORMATION SRVS</Name>
+		<DisplayName>Office Of Associate Librarian Information Srvs, Victoria University</DisplayName>
+		<Faculty>LIBRARY</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="OFFICE OF ASSOCIATE LIBRARIAN IRS&amp;I - LIBRARY">
+		<Name>OFFICE OF ASSOCIATE LIBRARIAN IRS&amp;I</Name>
+		<DisplayName>Office Of Associate Librarian Irs&amp;I, Victoria University</DisplayName>
+		<Faculty>LIBRARY</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="OFFICE OF THE UNIVERSITY LIBRARIAN - LIBRARY">
+		<Name>OFFICE OF THE UNIVERSITY LIBRARIAN</Name>
+		<DisplayName>Office Of The University Librarian, Victoria University</DisplayName>
+		<Faculty>LIBRARY</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="OFFICE OF THE DVC ACADEMIC &amp; STUDENTS">
+		<Name/>
+		<DisplayName>Office Of The Dvc Academic &amp; Students, Victoria University</DisplayName>
+		<Faculty>OFFICE OF THE DVC ACADEMIC &amp; STUDENTS</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="OFFICE OF THE DVC PLANNING MARKETING &amp; EXT AFFAIRS">
+		<Name/>
+		<DisplayName>Office Of The Dvc Planning Marketing &amp; Ext Affairs, Victoria University</DisplayName>
+		<Faculty>OFFICE OF THE DVC PLANNING MARKETING &amp; EXT AFFAIRS</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="OFFICE OF THE DVC RESEARCH &amp; KNOWLEDGE  EXCHANGE">
+		<Name/>
+		<DisplayName>Office Of The Dvc Research &amp; Knowledge  Exchange, Victoria University</DisplayName>
+		<Faculty>OFFICE OF THE DVC RESEARCH &amp; KNOWLEDGE  EXCHANGE</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="OFFICE OF THE PVC ACADEMIC &amp; STUDENTS">
+		<Name/>
+		<DisplayName>Office Of The Pvc Academic &amp; Students, Victoria University</DisplayName>
+		<Faculty>OFFICE OF THE PVC ACADEMIC &amp; STUDENTS</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="OFFICE OF THE PVC RESEARCH &amp; RESEARCH TRAINING">
+		<Name/>
+		<DisplayName>Office Of The Pvc Research &amp; Research Training, Victoria University</DisplayName>
+		<Faculty>OFFICE OF THE PVC RESEARCH &amp; RESEARCH TRAINING</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="POSTGRADUATE RESEARCH">
+		<Name/>
+		<DisplayName>Postgraduate Research, Victoria University</DisplayName>
+		<Faculty>POSTGRADUATE RESEARCH</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="PROGRAM MANAGEMENT OFFICE">
+		<Name/>
+		<DisplayName>Program Management Office, Victoria University</DisplayName>
+		<Faculty>PROGRAM MANAGEMENT OFFICE</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="RESEARCH SERVICES">
+		<Name/>
+		<DisplayName>Research Services, Victoria University</DisplayName>
+		<Faculty>RESEARCH SERVICES</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="TEACHER DEVELOPMENT UNIT">
+		<Name/>
+		<DisplayName>Teacher Development Unit, Victoria University</DisplayName>
+		<Faculty>TEACHER DEVELOPMENT UNIT</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="TEACHING &amp; LEARNING">
+		<Name/>
+		<DisplayName>Teaching &amp; Learning, Victoria University</DisplayName>
+		<Faculty>TEACHING &amp; LEARNING</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="FACULTY OFFICE - FACULTY OF TECHNICAL &amp; TRADES INNOVATION">
+		<Name>FACULTY OFFICE</Name>
+		<DisplayName>Faculty Office, Victoria University</DisplayName>
+		<Faculty>FACULTY OF TECHNICAL &amp; TRADES INNOVATION</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="INDUSTRY LIAISON - FACULTY OF TECHNICAL &amp; TRADES INNOVATION">
+		<Name>INDUSTRY LIAISON</Name>
+		<DisplayName>Industry Liaison, Victoria University</DisplayName>
+		<Faculty>FACULTY OF TECHNICAL &amp; TRADES INNOVATION</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="JOBS PLUS - FACULTY OF TECHNICAL &amp; TRADES INNOVATION">
+		<Name>JOBS PLUS</Name>
+		<DisplayName>Jobs Plus, Victoria University</DisplayName>
+		<Faculty>FACULTY OF TECHNICAL &amp; TRADES INNOVATION</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="OFFICE OF ASSOCIATE DEAN INDUSTRY &amp; ACCESS - FACULTY OF TECHNICAL &amp; TRADES INNOVATION">
+		<Name>OFFICE OF ASSOCIATE DEAN INDUSTRY &amp; ACCESS</Name>
+		<DisplayName>Office Of Associate Dean Industry &amp; Access, Victoria University</DisplayName>
+		<Faculty>FACULTY OF TECHNICAL &amp; TRADES INNOVATION</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="OFFICE OF ASSOCIATE DEAN INTL &amp; BUSINESS DEV - FACULTY OF TECHNICAL &amp; TRADES INNOVATION">
+		<Name>OFFICE OF ASSOCIATE DEAN INTL &amp; BUSINESS DEV</Name>
+		<DisplayName>Office Of Associate Dean Intl &amp; Business Dev, Victoria University</DisplayName>
+		<Faculty>FACULTY OF TECHNICAL &amp; TRADES INNOVATION</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="OFFICE OF ASSOCIATE DEAN QUALITY &amp; CAPABILITY - FACULTY OF TECHNICAL &amp; TRADES INNOVATION">
+		<Name>OFFICE OF ASSOCIATE DEAN QUALITY &amp; CAPABILITY</Name>
+		<DisplayName>Office Of Associate Dean Quality &amp; Capability, Victoria University</DisplayName>
+		<Faculty>FACULTY OF TECHNICAL &amp; TRADES INNOVATION</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="OFFICE OF THE EXECUTIVE DEAN - FACULTY OF TECHNICAL &amp; TRADES INNOVATION">
+		<Name>OFFICE OF THE EXECUTIVE DEAN</Name>
+		<DisplayName>Office Of The Executive Dean, Victoria University</DisplayName>
+		<Faculty>FACULTY OF TECHNICAL &amp; TRADES INNOVATION</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="SCHOOL OF CONSTRUCTION INDUSTRIES - FACULTY OF TECHNICAL &amp; TRADES INNOVATION">
+		<Name>SCHOOL OF CONSTRUCTION INDUSTRIES</Name>
+		<DisplayName>School Of Construction Industries, Victoria University</DisplayName>
+		<Faculty>FACULTY OF TECHNICAL &amp; TRADES INNOVATION</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="SCHOOL OF ENGINEERING &amp; INDUSTRIAL TRAINING - FACULTY OF TECHNICAL &amp; TRADES INNOVATION">
+		<Name>SCHOOL OF ENGINEERING &amp; INDUSTRIAL TRAINING</Name>
+		<DisplayName>School Of Engineering &amp; Industrial Training, Victoria University</DisplayName>
+		<Faculty>FACULTY OF TECHNICAL &amp; TRADES INNOVATION</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="SCHOOL OF SERVICE INDUSTRIES - FACULTY OF TECHNICAL &amp; TRADES INNOVATION">
+		<Name>SCHOOL OF SERVICE INDUSTRIES</Name>
+		<DisplayName>School Of Service Industries, Victoria University</DisplayName>
+		<Faculty>FACULTY OF TECHNICAL &amp; TRADES INNOVATION</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="TEACHING &amp; LEARNING - FACULTY OF TECHNICAL &amp; TRADES INNOVATION">
+		<Name>TEACHING &amp; LEARNING</Name>
+		<DisplayName>Teaching &amp; Learning, Victoria University</DisplayName>
+		<Faculty>FACULTY OF TECHNICAL &amp; TRADES INNOVATION</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="ASSOCIATE DIRECTOR LANGUAGE &amp; LEARNING - VU COLLEGE">
+		<Name>ASSOCIATE DIRECTOR LANGUAGE &amp; LEARNING</Name>
+		<DisplayName>Associate Director Language &amp; Learning, Victoria University</DisplayName>
+		<Faculty>VU COLLEGE</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="ENGLISH LANGUAGE INSTITUTE - VU COLLEGE">
+		<Name>ENGLISH LANGUAGE INSTITUTE</Name>
+		<DisplayName>English Language Institute, Victoria University</DisplayName>
+		<Faculty>VU COLLEGE</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="OFFICE OF ASSOC DIRECTOR LANG LEARN &amp; NUMERACY - VU COLLEGE">
+		<Name>OFFICE OF ASSOC DIRECTOR LANG LEARN &amp; NUMERACY</Name>
+		<DisplayName>Office Of Assoc Director Lang Learn &amp; Numeracy, Victoria University</DisplayName>
+		<Faculty>VU COLLEGE</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="OFFICE OF ASSOC DIRECTOR YOUTH - VU COLLEGE">
+		<Name>OFFICE OF ASSOC DIRECTOR YOUTH</Name>
+		<DisplayName>Office Of Assoc Director Youth, Victoria University</DisplayName>
+		<Faculty>VU COLLEGE</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="OFFICE OF DEPUTY DEAN - VU COLLEGE">
+		<Name>OFFICE OF DEPUTY DEAN</Name>
+		<DisplayName>Office Of Deputy Dean, Victoria University</DisplayName>
+		<Faculty>VU COLLEGE</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="OFFICE OF THE EXECUTIVE DEAN - VU COLLEGE">
+		<Name>OFFICE OF THE EXECUTIVE DEAN</Name>
+		<DisplayName>Office Of The Executive Dean, Victoria University</DisplayName>
+		<Faculty>VU COLLEGE</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="SCHOOL OF FOUNDATION COMMUNITY &amp; INDIG PROG - VU COLLEGE">
+		<Name>SCHOOL OF FOUNDATION COMMUNITY &amp; INDIG PROG</Name>
+		<DisplayName>School Of Foundation Community &amp; Indig Prog, Victoria University</DisplayName>
+		<Faculty>VU COLLEGE</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="SCHOOL OF HARVESTER - VU COLLEGE">
+		<Name>SCHOOL OF HARVESTER</Name>
+		<DisplayName>School Of Harvester, Victoria University</DisplayName>
+		<Faculty>VU COLLEGE</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="SCHOOL OF LANGUAGE &amp; LEARNING - VU COLLEGE">
+		<Name>SCHOOL OF LANGUAGE &amp; LEARNING</Name>
+		<DisplayName>School Of Language &amp; Learning, Victoria University</DisplayName>
+		<Faculty>VU COLLEGE</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="SCHOOL OF PATHWAYS &amp; TRANSITION - VU COLLEGE">
+		<Name>SCHOOL OF PATHWAYS &amp; TRANSITION</Name>
+		<DisplayName>School Of Pathways &amp; Transition, Victoria University</DisplayName>
+		<Faculty>VU COLLEGE</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="FACULTY OFFICE - FACULTY OF WORKFORCE DEVELOPMENT">
+		<Name>FACULTY OFFICE</Name>
+		<DisplayName>Faculty Office, Victoria University</DisplayName>
+		<Faculty>FACULTY OF WORKFORCE DEVELOPMENT</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="OFFICE OF ASSOCIATE DEAN ENTER &amp; COMMER DEV - FACULTY OF WORKFORCE DEVELOPMENT">
+		<Name>OFFICE OF ASSOCIATE DEAN ENTER &amp; COMMER DEV</Name>
+		<DisplayName>Office Of Associate Dean Enter &amp; Commer Dev, Victoria University</DisplayName>
+		<Faculty>FACULTY OF WORKFORCE DEVELOPMENT</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="OFFICE OF ASSOCIATE DEAN INDUSTRY &amp; INNOVATION - FACULTY OF WORKFORCE DEVELOPMENT">
+		<Name>OFFICE OF ASSOCIATE DEAN INDUSTRY &amp; INNOVATION</Name>
+		<DisplayName>Office Of Associate Dean Industry &amp; Innovation, Victoria University</DisplayName>
+		<Faculty>FACULTY OF WORKFORCE DEVELOPMENT</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="OFFICE OF ASSOCIATE DEAN QUALITY &amp; CAPABILITY - FACULTY OF WORKFORCE DEVELOPMENT">
+		<Name>OFFICE OF ASSOCIATE DEAN QUALITY &amp; CAPABILITY</Name>
+		<DisplayName>Office Of Associate Dean Quality &amp; Capability, Victoria University</DisplayName>
+		<Faculty>FACULTY OF WORKFORCE DEVELOPMENT</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="OFFICE OF THE EXECUTIVE DEAN - FACULTY OF WORKFORCE DEVELOPMENT">
+		<Name>OFFICE OF THE EXECUTIVE DEAN</Name>
+		<DisplayName>Office Of The Executive Dean, Victoria University</DisplayName>
+		<Faculty>FACULTY OF WORKFORCE DEVELOPMENT</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="SCHOOL OF BUSINESS SERVICES - FACULTY OF WORKFORCE DEVELOPMENT">
+		<Name>SCHOOL OF BUSINESS SERVICES</Name>
+		<DisplayName>School Of Business Services, Victoria University</DisplayName>
+		<Faculty>FACULTY OF WORKFORCE DEVELOPMENT</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="SCHOOL OF HEALTH &amp; COMMUNITY SERVICES - FACULTY OF WORKFORCE DEVELOPMENT">
+		<Name>SCHOOL OF HEALTH &amp; COMMUNITY SERVICES</Name>
+		<DisplayName>School Of Health &amp; Community Services, Victoria University</DisplayName>
+		<Faculty>FACULTY OF WORKFORCE DEVELOPMENT</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="SCHOOL OF INFORMATION TECHNOLOGY &amp; CREATIVE IND - FACULTY OF WORKFORCE DEVELOPMENT">
+		<Name>SCHOOL OF INFORMATION TECHNOLOGY &amp; CREATIVE IND</Name>
+		<DisplayName>School Of Information Technology &amp; Creative Ind, Victoria University</DisplayName>
+		<Faculty>FACULTY OF WORKFORCE DEVELOPMENT</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="SCHOOL OF SPORT &amp; SCIENCE - FACULTY OF WORKFORCE DEVELOPMENT">
+		<Name>SCHOOL OF SPORT &amp; SCIENCE</Name>
+		<DisplayName>School Of Sport &amp; Science, Victoria University</DisplayName>
+		<Faculty>FACULTY OF WORKFORCE DEVELOPMENT</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+	<Department id="WORK BASED EDUCATION RESEARCH CENTRE">
+		<Name/>
+		<DisplayName>Work Based Education Research Centre, Victoria University</DisplayName>
+		<Faculty>WORK BASED EDUCATION RESEARCH CENTRE</Faculty>
+		<Description/>
+		<Website/>
+		<Email/>
+		<Address/>
+		<Phone/>
+	</Department>
+</Departments>

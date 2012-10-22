@@ -1,0 +1,994 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 3.4.1
+- http://www.phpmyadmin.net
+-
+- Host: localhost:3306
+- Generation Time: Mar 08, 2012 at 05:09 AM
+- Server version: 5.0.77
+- PHP Version: 5.3.6
+-->
+
+<pma_xml_export version="1.0">
+    <!--
+    - Database: 'thinkred_wrdp4'
+    -->
+    <database name="thinkred_wrdp4">
+        <!-- Table wp_frm_fields -->
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">All rights reserved – private research and study only, fair use, any other use requires contact for permission</column>
+            <column name="field_key">collection_license</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">10.1071/ZO08082</column>
+            <column name="field_key">collection_ref2</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">No</column>
+            <column name="field_key">has_co1</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">Endocranial Volumes in Waterfowl</column>
+            <column name="field_key">project_title</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">The project was started as Patrick\'s PhD work at the Department of Zoology, the University of Melbourne in 2003 and is still ongoing. This project estimates the brain size in as many species of Anseriformes as possible to investigate the evolution of brain size in the group by using a comparative approach.
+
+This research was supported by funding from Victoria University Fellowship, the Department of Zoology and the Faculty of Science of the University of Melbourne, the David Hay Scholarship, le Fonds québécois de la recherche sur la nature et les technologies, the Academy of Natural Sciences, Philadelphia, the Field Museum of Natural History and the American Museum of Natural History. The following institutions offered access to their collection and/or logistical help: The Auckland Museum, the Australian Museum, the Bird group of the Natural History Museum at Tring, the Bishop Museum, the Canadian Museum of Nature, the Canterbury Museum, the Carnegie Museum of Natural History, CSIRO Sustainable Ecosystems, Australian National Wildlife Collection, the Department of Ornithology of the American Museum of Natural History, the Field Museum of Natural History, the Florida Museum of Natural History, the McGill University Redpath Museum, le Muséum National d’Histoire Naturelle, the Museum of New Zealand Te Papa Tongarewa, the Museum of Vertebrate Zoology, the University of California Berkeley, Museum Victoria, the Natural History Museum of Los Angeles County, the Ornithology Department of the Museum of Comparative Zoology of Harvard University, the Queen Victoria Museum and Art Gallery, the Queensland Museum, the Royal Alberta Museum, the Royal British Columbia Museum, the Royal Ontario Museum, the Sam Noble Oklahoma Museum of Natural History, the San Diego Natural History Museum, the Smithsonian Institution, the South Australian Museum, the University of Alaska Museum, the University of Kansas Natural History Museum, the University of Michigan Museum of Zoology, the University of Washington Burke Museum, the Western Australian Museum, the Yale University Peabody Museum and the Zoology Museum of the University of Copenhagen.</column>
+            <column name="field_key">project_brief_desc</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">Copyright (c) 2012, Victoria University - All rights reserved.
+The content of the work is copyright.
+Except as permitted by the Copyright Act 1968 (Cth), no part of it may in any form or by any means be reproduced, stored in a retrieval system or be broadcast or transmitted without the prior written permission of the publisher, Victoria University.</column>
+            <column name="field_key">collection_rightstatement</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">doi</column>
+            <column name="field_key">collection_ref_type2</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">No</column>
+            <column name="field_key">has_pub3</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">No access restrictions to Data Set One. Please contact Dr. Patrick Guay - Patrick.Guay@vu.edu.au for access details.</column>
+            <column name="field_key">collection_accessrights</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">Patrick.Guay@vu.edu.au</column>
+            <column name="field_key">collection_email</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">2003-11-01</column>
+            <column name="field_key">collection_start_date</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">1500 data records</column>
+            <column name="field_key">collection_number_of_items</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">Building 6, Victoria University, St Albans, VIC 3021</column>
+            <column name="field_key">location_details</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">Yes</column>
+            <column name="field_key">has_pub</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">Guay, P.-J. and Iwaniuk, A.N. (2008) Captive breeding reduces brain volume in waterfowl (Anseriformes). Condor, 110: 276-284.</column>
+            <column name="field_key">collection_textref</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">10.1525/cond.2008.8424</column>
+            <column name="field_key">collection_ref</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">doi</column>
+            <column name="field_key">collection_ref_type</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">Yes</column>
+            <column name="field_key">has_pub2</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">Guay, P.-J. and Iwaniuk, A.N. (2008) Inter-specific variation in relative brain size is not correlated with intensity of sexual selection in waterfowl (Anseriformes). Australian Journal of Zoology, 56: 311-321.</column>
+            <column name="field_key">collection_textref22</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">The data set collects brain size estimates in as many species of Anseriformes as possible to investigate the evolution of brain size in the group by using a comparative approach. Both wild and captive specimens were examined. The skeletal measurements were recorded in the Excel file, including several data fields such as brain cavity volume, average femur least diameter / circumference, average tibiotarsus least diameter / circumference, and average tarsus least diameter / circumference. The data collection was started in Nov 2003 and is still ongoing. The dataset 1 contains more than 1500 data records, some of which have been published in the related journals.
+
+This research was supported by funding from Victoria University Fellowship, the Department of Zoology and the Faculty of Science of the University of Melbourne, the David Hay Scholarship, le Fonds québécois de la recherche sur la nature et les technologies, the Academy of Natural Sciences, Philadelphia, the Field Museum of Natural History and the American Museum of Natural History. The following institutions offered access to their collection and/or logistical help: The Auckland Museum, the Australian Museum, the Bird group of the Natural History Museum at Tring, the Bishop Museum, the Canadian Museum of Nature, the Canterbury Museum, the Carnegie Museum of Natural History, CSIRO Sustainable Ecosystems, Australian National Wildlife Collection, the Department of Ornithology of the American Museum of Natural History, the Field Museum of Natural History, the Florida Museum of Natural History, the McGill University Redpath Museum, le Muséum National d’Histoire Naturelle, the Museum of New Zealand Te Papa Tongarewa, the Museum of Vertebrate Zoology, the University of California Berkeley, Museum Victoria, the Natural History Museum of Los Angeles County, the Ornithology Department of the Museum of Comparative Zoology of Harvard University, the Queen Victoria Museum and Art Gallery, the Queensland Museum, the Royal Alberta Museum, the Royal British Columbia Museum, the Royal Ontario Museum, the Sam Noble Oklahoma Museum of Natural History, the San Diego Natural History Museum, the Smithsonian Institution, the South Australian Museum, the University of Alaska Museum, the University of Kansas Natural History Museum, the University of Michigan Museum of Zoology, the University of Washington Burke Museum, the Western Australian Museum, the Yale University Peabody Museum and the Zoology Museum of the University of Copenhagen.</column>
+            <column name="field_key">coll_description</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">0608</column>
+            <column name="field_key">forcode_1</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">dataset</column>
+            <column name="field_key">collection_type</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">Set 1 of 2 Collections of Measurements Relating to the Evolution of Brain Size in Water Birds</column>
+            <column name="field_key">collection_title</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">SCHOOL OF ENGINEERING &amp; SCIENCE</column>
+            <column name="field_key">p1_school</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">FACULTY OF HEALTH, ENGINEERING &amp; SCIENCE</column>
+            <column name="field_key">p1_faculty</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">Project Owner</column>
+            <column name="field_key">p1_relationship</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">Jean Guay</column>
+            <column name="field_key">p1_lastname</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">Patrick.Guay@vu.edu.au</column>
+            <column name="field_key">p1_email</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">Patrick</column>
+            <column name="field_key">p1_firstname</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">Dr.</column>
+            <column name="field_key">p1_title</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">publish</column>
+            <column name="field_key">internal_status</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">23</column>
+            <column name="meta_value">10</column>
+            <column name="field_key">user_id</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">In September 2006, Prof. John Zeleznikow, Andrew Vincent and Brendon Stewart received a grant from the Australian Football league Research Board to undertake this project. The goal of the project was to examine issue of consistency and fairness in sporting tribunal decision-making. A more difficult issue is the role of consistency of decision-making and whether fairness automatically includes consistency given that each human event is unique in its facts. Should like be treated the same as (nearly) like or should each event be treated without reference to any other event? The AFL clearly wanted to increase consistency in the new system. (See ‘set of principles’ in AFL Tribunals Reforms 2005) yet does not accept the legal principle of precedent (the principle that the results of previous similar cases should influence or even direct the result of the instant case). This reflects the even present conflict in judicial or quasi-judicial decision-making between flexibility and predictability.
+This project was conducted in 2006.
+
+For the 2005 season, the Australian Football League (AFL) overhauled its system of determining penalties for significant player infringements during a match. It introduced a Match Review Panel which was responsible for assessing and classifying incidents from all AFL matches. Whilst umpires could still report players, the match review panel was established to review the videos of each game . A pre-defined set of points was given for each infringement. Players with prior poor records (viewed as an aggravating factor) receive an increased penalty, while those who accept the view of the Match Review Panel (and the case is not heard by the Tribunal) receive a reduced penalty.</column>
+            <column name="field_key">project_brief_desc</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">Using Knowledge Management techniques to assist with the analysis of decision-making by the Australian Football League Match Review Panel and the Australian Football League Tribunal</column>
+            <column name="field_key">project_title</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">No</column>
+            <column name="field_key">has_co3</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">VICTORIA LAW SCHOOL</column>
+            <column name="field_key">co2_school</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">FACULTY OF BUSINESS &amp; LAW</column>
+            <column name="field_key">co2_faculty</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">brendon.stewart@vu.edu.au</column>
+            <column name="field_key">co2_email</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">Stewart</column>
+            <column name="field_key">co2_lastname</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">Yes</column>
+            <column name="field_key">has_co2</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">Mr</column>
+            <column name="field_key">co2_title</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">Brendon</column>
+            <column name="field_key">co2_firstname</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">SCHOOL OF MANAGEMENT &amp; INFORMATION SYSTEMS</column>
+            <column name="field_key">p1_school</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">http://nla.gov.au/nla.party-614772</column>
+            <column name="field_key">p1_nla</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">Yes</column>
+            <column name="field_key">has_co1</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">Mr</column>
+            <column name="field_key">co1_title</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">Andrew</column>
+            <column name="field_key">co1_firstname</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">Vincent</column>
+            <column name="field_key">co1_lastname</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">Andrew.Vincent@vu.edu.au</column>
+            <column name="field_key">co1_email</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">Yes</column>
+            <column name="field_key">c1_internal</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">FACULTY OF ARTS, EDUCATION &amp; HUMAN DEVELOPMENT</column>
+            <column name="field_key">c1_faculty</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">SCHOOL OF ACCOUNTING &amp; FINANCE</column>
+            <column name="field_key">co1_school</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">FACULTY OF BUSINESS &amp; LAW</column>
+            <column name="field_key">p1_faculty</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">Yes</column>
+            <column name="field_key">p1_internal</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">john.zeleznikow@vu.edu.au</column>
+            <column name="field_key">p1_email</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">Project Owner</column>
+            <column name="field_key">p1_relationship</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">John</column>
+            <column name="field_key">p1_firstname</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">Zelezniknow</column>
+            <column name="field_key">p1_lastname</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">Prof.</column>
+            <column name="field_key">p1_title</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">8</column>
+            <column name="field_key">user_id</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">0806</column>
+            <column name="field_key">forcode_1</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">dataset</column>
+            <column name="field_key">collection_type</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">Interview Assessed for Consistency and Fairness in Sporting Tribunal (Australian Football League) Decision-Making</column>
+            <column name="field_key">collection_title</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">The interview was conducted in 2006 with several people in the Australian Football League (AFL) Match Review Panel and Tribunal process and explored the knowledge management techniques to assist with the analysis of decision-making by the AFL Match Review Panel and AFL Tribunal.
+
+From the 2005 season, the Australian Football League (AFL) overhauled its system of determining penalties for significant player infringements during a match. It introduced a Match Review Panel which was responsible for assessing and classifying incidents from all AFL matches. The goal of this data collection is to examine issues of consistency and fairness in sporting tribunal / review panel decision-making.
+
+The interview content was recorded in the Word file, together with the brief project introduction and timeline.</column>
+            <column name="field_key">coll_description</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">CQG, Victoria University at City Queen Campus, 283 Queen Street, Melbourne VIC 3000</column>
+            <column name="field_key">location_details</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">No</column>
+            <column name="field_key">has_pub</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">Permission is required to access the data. Please contact Prof. John Zeleznikow - john.zeleznikow@vu.edu.au for access details.</column>
+            <column name="field_key">collection_accessrights</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">Copyright (c) 2012, Victoria University - All rights reserved.
+The content of the work is copyright.
+Except as permitted by the Copyright Act 1968 (Cth), no part of it may in any form or by any means be reproduced, stored in a retrieval system or be broadcast or transmitted without the prior written permission of the publisher, Victoria University.</column>
+            <column name="field_key">collection_rightstatement</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">24</column>
+            <column name="meta_value">All rights reserved – private research and study only, fair use, any other use requires contact for permission</column>
+            <column name="field_key">collection_license</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">doi</column>
+            <column name="field_key">collection_ref_type2</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">10.1071/ZO08082</column>
+            <column name="field_key">collection_ref2</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">Guay, P.-J. and Iwaniuk, A.N. (2008) Inter-specific variation in relative brain size is not correlated with intensity of sexual selection in waterfowl (Anseriformes). Australian Journal of Zoology, 56: 311-321.</column>
+            <column name="field_key">collection_textref22</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">Yes</column>
+            <column name="field_key">has_pub2</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">Patrick.Guay@vu.edu.au</column>
+            <column name="field_key">collection_email</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">2003-11-01</column>
+            <column name="field_key">collection_start_date</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">nearly 400 data records</column>
+            <column name="field_key">collection_number_of_items</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">Building 6, Victoria University, St Albans, VIC 3021</column>
+            <column name="field_key">location_details</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">Yes</column>
+            <column name="field_key">has_pub</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">Guay, P.-J. and Iwaniuk, A.N. (2008) Captive breeding reduces brain volume in waterfowl (Anseriformes). Condor, 110: 276-284.</column>
+            <column name="field_key">collection_textref</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">10.1525/cond.2008.8424</column>
+            <column name="field_key">collection_ref</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">doi</column>
+            <column name="field_key">collection_ref_type</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">0608</column>
+            <column name="field_key">forcode_1</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">dataset</column>
+            <column name="field_key">collection_type</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">Set 2 of 2 Collections of Measurements Relating to the Evolution of Brain Size in Water Birds</column>
+            <column name="field_key">collection_title</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">The data set collects brain size estimates in as many species of Anseriformes as possible to investigate the evolution of brain size in the group by using a comparative approach. Both wild and captive specimens were examined. The skeletal measurements were recorded in the Excel file, including several data fields such as brain cavity volume, average femur least diameter / circumference, average tibiotarsus least diameter / circumference, and average tarsus least diameter / circumference. The data collection was started in Nov 2003 and is still ongoing. The dataset 2 contains nearly 400 data records which has not been published to the public yet.
+
+This research was supported by funding from Victoria University Fellowship, the Department of Zoology and the Faculty of Science of the University of Melbourne, the David Hay Scholarship, le Fonds québécois de la recherche sur la nature et les technologies, the Academy of Natural Sciences, Philadelphia, the Field Museum of Natural History and the American Museum of Natural History. The following institutions offered access to their collection and/or logistical help: The Auckland Museum, the Australian Museum, the Bird group of the Natural History Museum at Tring, the Bishop Museum, the Canadian Museum of Nature, the Canterbury Museum, the Carnegie Museum of Natural History, CSIRO Sustainable Ecosystems, Australian National Wildlife Collection, the Department of Ornithology of the American Museum of Natural History, the Field Museum of Natural History, the Florida Museum of Natural History, the McGill University Redpath Museum, le Muséum National d’Histoire Naturelle, the Museum of New Zealand Te Papa Tongarewa, the Museum of Vertebrate Zoology, the University of California Berkeley, Museum Victoria, the Natural History Museum of Los Angeles County, the Ornithology Department of the Museum of Comparative Zoology of Harvard University, the Queen Victoria Museum and Art Gallery, the Queensland Museum, the Royal Alberta Museum, the Royal British Columbia Museum, the Royal Ontario Museum, the Sam Noble Oklahoma Museum of Natural History, the San Diego Natural History Museum, the Smithsonian Institution, the South Australian Museum, the University of Alaska Museum, the University of Kansas Natural History Museum, the University of Michigan Museum of Zoology, the University of Washington Burke Museum, the Western Australian Museum, the Yale University Peabody Museum and the Zoology Museum of the University of Copenhagen.</column>
+            <column name="field_key">coll_description</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">The project was started as Patrick\'s PhD work at the Department of Zoology, the University of Melbourne in 2003 and is still ongoing. This project estimates the brain size in as many species of Anseriformes as possible to investigate the evolution of brain size in the group by using a comparative approach.
+
+This research was supported by funding from Victoria University Fellowship, the Department of Zoology and the Faculty of Science of the University of Melbourne, the David Hay Scholarship, le Fonds québécois de la recherche sur la nature et les technologies, the Academy of Natural Sciences, Philadelphia, the Field Museum of Natural History and the American Museum of Natural History. The following institutions offered access to their collection and/or logistical help: The Auckland Museum, the Australian Museum, the Bird group of the Natural History Museum at Tring, the Bishop Museum, the Canadian Museum of Nature, the Canterbury Museum, the Carnegie Museum of Natural History, CSIRO Sustainable Ecosystems, Australian National Wildlife Collection, the Department of Ornithology of the American Museum of Natural History, the Field Museum of Natural History, the Florida Museum of Natural History, the McGill University Redpath Museum, le Muséum National d’Histoire Naturelle, the Museum of New Zealand Te Papa Tongarewa, the Museum of Vertebrate Zoology, the University of California Berkeley, Museum Victoria, the Natural History Museum of Los Angeles County, the Ornithology Department of the Museum of Comparative Zoology of Harvard University, the Queen Victoria Museum and Art Gallery, the Queensland Museum, the Royal Alberta Museum, the Royal British Columbia Museum, the Royal Ontario Museum, the Sam Noble Oklahoma Museum of Natural History, the San Diego Natural History Museum, the Smithsonian Institution, the South Australian Museum, the University of Alaska Museum, the University of Kansas Natural History Museum, the University of Michigan Museum of Zoology, the University of Washington Burke Museum, the Western Australian Museum, the Yale University Peabody Museum and the Zoology Museum of the University of Copenhagen.</column>
+            <column name="field_key">project_brief_desc</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">No</column>
+            <column name="field_key">has_co1</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">Endocranial Volumes in Waterfowl</column>
+            <column name="field_key">project_title</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">Patrick</column>
+            <column name="field_key">p1_firstname</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">Jean Guy</column>
+            <column name="field_key">p1_lastname</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">Patrick.Guay@vu.edu.au</column>
+            <column name="field_key">p1_email</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">Project Owner</column>
+            <column name="field_key">p1_relationship</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">FACULTY OF HEALTH, ENGINEERING &amp; SCIENCE</column>
+            <column name="field_key">p1_faculty</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">SCHOOL OF ENGINEERING &amp; SCIENCE</column>
+            <column name="field_key">p1_school</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">10</column>
+            <column name="field_key">user_id</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">publish</column>
+            <column name="field_key">internal_status</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">Dr.</column>
+            <column name="field_key">p1_title</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">No</column>
+            <column name="field_key">has_pub3</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">Permission is required to access Data Set Two. Please contact Dr. Patrick Guay - Patrick.Guay@vu.edu.au for access details.</column>
+            <column name="field_key">collection_accessrights</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">Copyright (c) 2012, Victoria University - All rights reserved.
+The content of the work is copyright.
+Except as permitted by the Copyright Act 1968 (Cth), no part of it may in any form or by any means be reproduced, stored in a retrieval system or be broadcast or transmitted without the prior written permission of the publisher, Victoria University.</column>
+            <column name="field_key">collection_rightstatement</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">25</column>
+            <column name="meta_value">All rights reserved – private research and study only, fair use, any other use requires contact for permission</column>
+            <column name="field_key">collection_license</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">The total size is 8KB.</column>
+            <column name="field_key">collection_total_size</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">http://www.tissottiming.com</column>
+            <column name="field_key">collection_url</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">Building L, ISEAL, Victoria University at Footscray Park, Footscray VIC 3011</column>
+            <column name="field_key">location_details</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">Yes</column>
+            <column name="field_key">has_pub</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">Bahadorreza Ofoghi, John Zeleznikow, Clare MacMahon, and Dan Dwyer (2010) A machine learning approach to predicting winning patterns in track cycling omnium. In Proceedings of the International Federation for Information Processing (IFIP) Conference on Advances in Information and Communication Technology (Springer Verlag), Brisbane, Australia.</column>
+            <column name="field_key">collection_textref</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">2011-12-31</column>
+            <column name="field_key">collection_end_date</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">There are 172 data records in men\'s results and 145 data records in women\'s results.</column>
+            <column name="field_key">collection_number_of_items</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">2008-01-01</column>
+            <column name="field_key">collection_start_date</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">1106</column>
+            <column name="field_key">forcode_1</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">0806</column>
+            <column name="field_key">forcoode_2</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">0801</column>
+            <column name="field_key">forcode_3</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">01/01/2010</column>
+            <column name="field_key">project_start_date</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">dataset</column>
+            <column name="field_key">collection_type</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">Collection of Performance Measurements in Track Cycling Omnium Competitions</column>
+            <column name="field_key">collection_title</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">This dataset includes performance results of riders in international track cycling omnium competitions. The dataset mainly consists of the rankings of riders in each of the six individual events of the omnium as well as the overall placings of the riders. The goal of the project was to identifiy winning performance patterns of riders in the omnium, which is a newly introduced competition to the Olympic Games to be held for the first time in London 2012 Olympic Games.
+
+The keywords are \'Track Cyling Omnium\' and \'Performance Results / Analysis\'.</column>
+            <column name="field_key">coll_description</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">clare.macmahon@vu.edu.au</column>
+            <column name="field_key">co3_email</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">Yes</column>
+            <column name="field_key">c3_internal</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">FACULTY OF ARTS, EDUCATION &amp; HUMAN DEVELOPMENT</column>
+            <column name="field_key">co3_faculty</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">SCHOOL OF SPORT &amp; EXERCISE SCIENCE</column>
+            <column name="field_key">co3_school</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">No</column>
+            <column name="field_key">has_co4</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">Data Mining in Track Cycling Omnium Competitions</column>
+            <column name="field_key">project_title</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">The omnium is a newly introduced track cycling competition to be included in the London 2012 Olympic Games. It involves six individual events and, therefore, requires strategic planning for riders and coaches to achieve the best overall standing in terms of the ranking, speed, and time in each individual component.
+
+The goal of the project was to identifiy winning performance patterns of riders in the omnium based on the performance results. The unsupervised, supervised, and statistical analyses have been conducted on the men’s and women’s historical competition data in the World Championships since 2008 to find winning patterns for each gender in terms of the ranking of riders in each individual event.
+
+The project was started in January 2010 and is ongoing.</column>
+            <column name="field_key">project_brief_desc</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">MacMahon</column>
+            <column name="field_key">co3_lastname</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">Clare</column>
+            <column name="field_key">co3_firstname</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">Dr.</column>
+            <column name="field_key">co3_title</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">Yes</column>
+            <column name="field_key">has_co3</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">Victorian Institute of Sport (VIS)</column>
+            <column name="field_key">co2_external_org_name</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">No</column>
+            <column name="field_key">c2_internal</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">Dan</column>
+            <column name="field_key">co2_firstname</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">Dwyer</column>
+            <column name="field_key">co2_lastname</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">Dr.</column>
+            <column name="field_key">co2_title</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">Yes</column>
+            <column name="field_key">has_co2</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">http://nla.gov.au/nla.party-614772</column>
+            <column name="field_key">co1_nla</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">Yes</column>
+            <column name="field_key">c1_internal</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">FACULTY OF BUSINESS &amp; LAW</column>
+            <column name="field_key">c1_faculty</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">SCHOOL OF MANAGEMENT &amp; INFORMATION SYSTEMS</column>
+            <column name="field_key">co1_school</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">Zeleznikow</column>
+            <column name="field_key">co1_lastname</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">john.zeleznikow@vu.edu.au</column>
+            <column name="field_key">co1_email</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">John</column>
+            <column name="field_key">co1_firstname</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">Prof.</column>
+            <column name="field_key">co1_title</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">Yes</column>
+            <column name="field_key">has_co1</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">Yes</column>
+            <column name="field_key">p1_internal</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">INSTITUTE OF SPORT EXERCISE &amp; ACTIVE LIVING</column>
+            <column name="field_key">p1_faculty</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">Ofoghi</column>
+            <column name="field_key">p1_lastname</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">Bahadorreza.Ofoghi@vu.edu.au</column>
+            <column name="field_key">p1_email</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">Project Owner</column>
+            <column name="field_key">p1_relationship</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">Bahadorreza</column>
+            <column name="field_key">p1_firstname</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">Dr.</column>
+            <column name="field_key">p1_title</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">publish</column>
+            <column name="field_key">internal_status</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">1</column>
+            <column name="field_key">user_id</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">10.1007/978-3-642-15286-3_7</column>
+            <column name="field_key">collection_ref</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">doi</column>
+            <column name="field_key">collection_ref_type</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">No</column>
+            <column name="field_key">has_pub2</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">Permission is required to access the dataset. Please contact Dr. Bahadorreza Ofoghi - Bahadorreza.Ofoghi@vu.edu.au for access details.</column>
+            <column name="field_key">collection_accessrights</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">Copyright (c) 2012, Victoria University - All rights reserved.
+The content of the work is copyright.
+Except as permitted by the Copyright Act 1968 (Cth), no part of it may in any form or by any means be reproduced, stored in a retrieval system or be broadcast or transmitted without the prior written permission of the publisher, Victoria University.</column>
+            <column name="field_key">collection_rightstatement</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">21</column>
+            <column name="meta_value">All rights reserved – private research and study only, fair use, any other use requires contact for permission</column>
+            <column name="field_key">collection_license</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">No</column>
+            <column name="field_key">has_pub</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">Copyright 2011, Victoria University (Lyle Winton).</column>
+            <column name="field_key">collection_rightstatement</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">Please fill out a form in triplicate found at the website and contact the project owner.  You can only use this dataset on Tuesdays.</column>
+            <column name="field_key">collection_accessrights</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">Ethics forbids use of this data outside of research.  Additional ethics clearance is required for use.</column>
+            <column name="field_key">coll_license_other</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">Some rights reserved</column>
+            <column name="field_key">collection_license</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">Research Office, Building C
+Footscray Park Campus,
+Victoria University, VIC 3000</column>
+            <column name="field_key">location_details</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">lyle.winton@vu.edu.au</column>
+            <column name="field_key">collection_email</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">doi</column>
+            <column name="field_key">collection_id_type</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">doi:10.1/blah1</column>
+            <column name="field_key">collection_id</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">L. Winton. \&quot;Dataset of Lyle\'s\&quot;, Archive XYZ, doi:10.1/blah1 .</column>
+            <column name="field_key">collection_citation</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">http://research.vu.edu.au/</column>
+            <column name="field_key">collection_url</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">Melbourne</column>
+            <column name="field_key">collection_location</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">150 files</column>
+            <column name="field_key">collection_number_of_items</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">10 GB</column>
+            <column name="field_key">collection_total_size</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">2012-02-23</column>
+            <column name="field_key">collection_end_date</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">2005-01-01</column>
+            <column name="field_key">collection_start_date</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">This is a bunch of files containing my data.</column>
+            <column name="field_key">coll_description</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">Collection of Lyle\'s Project</column>
+            <column name="field_key">collection_title</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">1234</column>
+            <column name="field_key">forcode_1</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">This is the project belonging to Lyle.  It was really cool.
+
+I\'d like to thank all the participants for helping out here.
+Some dodgy text: @!#&amp;^(&amp;$(*#$^!@#!.\'\&quot;/?\\n.</column>
+            <column name="field_key">project_brief_desc</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">No</column>
+            <column name="field_key">has_co1</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">Lyle\'s Project</column>
+            <column name="field_key">project_title</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">123213</column>
+            <column name="field_key">p1_nla</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">Manager / Contact</column>
+            <column name="field_key">p1_relationship</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">FACULTY OF BUSINESS &amp; LAW</column>
+            <column name="field_key">p1_faculty</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">CORPORATE SERVICES</column>
+            <column name="field_key">p1_school</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">lyle.winton@vu.edu.au</column>
+            <column name="field_key">p1_email</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">Winton</column>
+            <column name="field_key">p1_lastname</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">10</column>
+            <column name="field_key">user_id</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">Dr.</column>
+            <column name="field_key">p1_title</column>
+        </table>
+        <table name="wp_frm_fields">
+            <column name="id">22</column>
+            <column name="meta_value">Lyle</column>
+            <column name="field_key">p1_firstname</column>
+        </table>
+    </database>
+</pma_xml_export>

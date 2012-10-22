@@ -1,0 +1,45 @@
+
+Notes on the VU profile of the ANDS RIFCS model:
+
+
+Project (RIF-CS Activity) - 1 per form
+  * rules:  Project of the same name are considered duplicates, to be removed in XSLT.  So multiple datasets per project require multiple forms, and form review must check project names exactly match.
+
+
+Collection - 1 per form
+  * rule: Collection ID (handle, DOI etc) are provided as additional identifier.
+
+
+Person (RIF-CS Party) - up to 5 per form
+ + Internal ID (= email address)
+ * rules:  First "contact" is project relationship "owner"/"manager" and collection relationship "manager".  Other contacts are project "related" and collection "related"
+ * rules: Each external person has 1 primary organisation.
+ * rules: If external person has an ANDS key (existing record), we link to that.
+
+
+External Organisations (RIF-CS Party) - populated from static files, per Person
+ + Name
+ - Faculty
+ + Description
+ + URL
+ + Contact text (address, phone, whatever)
+ * rules: If external organisation has an ANDS key (existing record), we link to that.
+ * rules: Externals are kept in a static file containing only organisations for which we maintain the details.
+ * registryObject “group” attribute for all VU entries are "Victoria University".  However, for external orgs and people this is set to the external organisation name (in Externals.xml this is actually Department>Faculty)
+
+
+Identifiers and Keys:
+Initially were using manually created handles from ANDS webapp as "key" IDs for all records.  Requires a lot of manual entry, cutting and pasting, and the handles are unlikely to be used for external systems.
+This change to generating local ID "key" for each entry (eg. like Giffith and others) and allow for
+a handle/doi to  be added to the Collection.  Note that this is not the publication DOIs but is for
+the data reference/citation itself.
+* Keys:
+ * Org Units:  vu.edu.au/org-<name of org unit>
+   * ideally:  vu.edu.au/org-HASH(<name of org unit>)
+ * Person:  vu.edu.au/person-<email>
+   * ideally:  vu.edu.au/person-HASH(<email>)
+ * Project:  vu.edu.au/project-<wp_frm_items.id? wp_frm_items.item_key?>
+   * NOTE: changed to include "name" so ANDS ignores duplicate keys
+ * Collection:  vu.edu.au/collection-<wp_frm_items.id? wp_frm_items.item_key?>
+
+
