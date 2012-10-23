@@ -1,8 +1,16 @@
 VUANDS100
 =========
 
-Victoria University ANDS SC25 project.  This project developed a system for online collection of dataset/collection metadata and upload to Research Data Australia.
+Victoria University ANDS SC25 project.  This project developed an interface, a website,
+for the online collection of metadata describing research datasets and collection.
+The metadata is collected via a single dynamic web form designed with field for upload into
+the Research Data Australia registry
+(in [RIF-CS](http://www.ands.org.au/resource/rif-cs.html) format).
+The interface is hosted on a WordPress install and the form on the Formidable Pro pluggin.
 
+This repository holds: instructions for creating and operating your own interface/site on the Australian
+NeCTAR research cloud, based on an existing image; an export of the Formidable form used (for DIY installs);
+and the files necessary for metadata conversion into RIF-CS for upload.
 
 Getting Started
 ===============
@@ -13,9 +21,12 @@ Read the following files:
     * Instructions for getting your own image started on the NeCTAR cloud.
 
 * *Service Manual - generic.docx*
-    * A process you might implement in the collection, review, upload of records to RDA.
+    * An operational process you might implement in the collection, review, upload of records to RDA.
 
-This system depends on an installation of WordPress (3.4) and the plugin Formidable Pro (1.06).  The install instructions depend on access to the [Australian NeCTAR research cloud](https://dashboard.rc.nectar.org.au/) where a public base image is available.
+This system depends on an installation of WordPress (3.4) and the plugin Formidable Pro (1.06).
+The install instructions depend on access to the
+[Australian NeCTAR research cloud](https://dashboard.rc.nectar.org.au/)
+where a public base image is available.
 
 
 Acknowledgements
