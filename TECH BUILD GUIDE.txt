@@ -1,0 +1,126 @@
+
+=== INSTALLATION ===
+
+The build guide is designed to provide further documentation on how to build the website server
+from scratch, but does not cover the site content or building the ANDS form.
+
+We recommend you use the INSTALL guide, starting with a NeCTAR image... much faster!
+eg. VU-ANDS-base20121019
+
+The build guide also includes technical notes on how the metadata transform to RIF-CS works,
+further below.
+
+
+
+=== SERVER BUILD NOTES ===
+
+The system was started from the NeCTAR cloud "InstantWeb" image.  Further details:
+http://support.rc.nectar.org.au/docs/image_catalog.html
+Essentially this is an ubuntu image with wordpress, mediawiki, phpmyadmin, mysql installed
+
+(NOTE: This instance is now deprecated.)
+
+Fix the hostname...
+
+$  sudo hostname MYHOSTNAME.DOMAIN
+$  sudo vi /etc/hostname
+$  sudo vi /etc/hosts
+
+Sendmail is required for new account verification.  Install and check running on port 25 (local access only)...
+
+$  sudo apt-get install sendmail
+$ chmod go-w /etc
+$ chmod go-w /etc/mail
+$  sudo /etc/init.d/sendmail stop
+$  sudo /etc/init.d/sendmail start
+$  sudo lsof -i
+
+(Optional) DynamicDNS install (ddclient) and edit the config /etc/ddclient.conf
+$  sudo apt-get install ddclient
+
+
+Configure WordPress...
+
+$  cd /var/www/wordpress/
+$  sudo touch .htaccess
+$  sudo chgrp www-data .htaccess
+$  sudo chmod g+w .htaccess
+$  sudo chown -R www-data:www-data *
+$  sudo chmod -R g+w wp-content
+
+$  sudo vi /etc/apache2/sites-enabled/000-default 
+### change /var/www "AllowOverride None" to...
+AllowOverride All
+
+$  sudo vi /etc/php5/apache2/php.ini
+### increase post max size for Formidable
+post_max_size = 64M
+### add max_input_vars to the bottom for Formidable, required for PHP versions before 5.3.9
+add max_input_vars=2000
+
+$  sudo /etc/init.d/apache2 restart
+
+$  sudo vi /var/www/wordpress/wp-config.php
+### Add lines to allow simple installation of plugins
+define( 'FS_METHOD', 'direct' );
+define( 'FS_CHMOD_DIR', 0777 );
+define( 'FS_CHMOD_FILE', 0777 );
+### add to the end, allows easier hostname changes in general settings
+define('RELOCATE',true);
+
+
+Configure the WordPress installation online...
+
+* Plugins > Add New > Peter's Login Redirect
+* Settings > Login/logout redirects
+  Post-registration URL:  http://MYHOSTNAME.DOMAIN/pathtowordpress/
+
+* Plugins > Add New > Login With Ajax
+* Settings > Login With Ajax
+  Global Login Redirect:  http://MYHOSTNAME.DOMAIN/pathtowordpress/
+  Global Logout Redirect:  http://MYHOSTNAME.DOMAIN/pathtowordpress/
+* Appearance > Widgets
+  Login With Ajax >drag-to> Main Sidebar
+* Appearance > Menus
+  Create "Custom Menu"
+  Theme Locations: Primary Menu > "Custom Menu"
+
+* Plugins > Add New > Formidable
+  Formidable > Settings - purchase the Pro license and enter credentials
+
+
+Tips for form building...
+* Be sure to set an email notification for form submission:
+   Formidable > Forms > "FORM_NAME" > Settings > Email
+* Be sure to check the security on the form:
+   Formidable > Forms > ANDS v100 > Settings > General
+   recommend Only logged-in users can see and submit this Form
+   recommend Allow Logged-in Users to Edit Their Own Previous Responses
+
+
+Follow the INSTALL.txt guide for information on...
+  SECURING THE INSTANCE
+  CUSTOMISING THE INSTANCE
+
+Talk with NeCTAR about the best way to maintain OS security patches for the server.
+
+
+
+=== TRANSFORM NOTES ===
+
+The Operator Guide explains how to extract Formidable form key-value pairs in XML format,
+using the phpMyAdmin interface to the MySQL database.  An XSLT transform (transform.xml)
+is then use to transform this XML format, together with an XML file of external organisation
+details, into the RIF-CS XML format.
+
+The External.xml file is generated from a MS Excel spreadsheet found in the folder static_files.
+_READ_ME.txt in that folder has further information.  These are external organisations not already in
+Research Data Australia that we will create records for.  The Excel file (XLSX) was modified
+by mapping the spreadsheet columns to the XML Schema Source "VU_Org_Template.xsd".  The linking key
+for each entry is the ID column.  Changing the ID will effect the ANDS registry URL for the
+organisations, so avoid.  Changing the display name is fine.
+
+The XSLT transform use "Saxon - XSLT and XQuery processor (Home Edition)" bundled
+with this repository.  http://sourceforge.net/projects/saxon/files/Saxon-HE/9.4/
+
+
