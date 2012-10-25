@@ -38,6 +38,6 @@ The Excel files (XLSX) were modified by mapping the spreadsheets columns to the 
 
 The linking key for each entry is the ID.
 
-Changing the ID will effect the ANDS registry URL for the organisations.
+Changing the ID will effect the ANDS registry URL for the organisations, so avoid.
 
 Changing the display name is fine.

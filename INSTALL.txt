@@ -14,7 +14,9 @@
 * Login to the NECTAR Dashboard using you AAF credentials.
 https://dashboard.rc.nectar.org.au/nova/
 
-* Search for the appropriate base image under the "Images & Snapshots" section, eg. VU-ANDS-base20121019
+* Search for the appropriate base image with prefix "VU-ANDS-base" under the "Images & Snapshots"
+section, eg. VU-ANDS-base20121025
+Note: the "BUILD GUIDE.txt" has more detailed information about how this image was created.
 
 * Launch the approriate image, a small flavor is sufficient, remember to select your keypair
 and the right secuirty group.
