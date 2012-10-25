@@ -1,6 +1,5 @@
-
 /*
- * VU ANDS system files
+ * VU ANDS project system files
  *
  * Copyright (c) 2012, Victoria University
  *	Authors:  Lyle Winton, Cyrus Keong, Terri Dentry, Calani Knight, Liping Wang, Phung T Tran
@@ -29,6 +28,13 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+
+
+VU ANDS PROJECT CREATIVE WORKS.
+Creative works on this site are licensed under a Creative Commons Attribution 3.0 Australia License
+unless stated otherwise.  http://creativecommons.org/licenses/by/3.0/au/deed.en_US
+
+
 See third party licenses below.
 
 
