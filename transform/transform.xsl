@@ -1126,6 +1126,121 @@
                     </relatedObject>
                 
 
+                <xsl:if
+                    test="current-group()//column[@name='field_key']='p1_title' or current-group()//column[@name='field_key']='p1_firstname' or current-group()//column[@name='field_key']='p1_lastname'">
+                    <relatedObject>
+                        <key>vu/person/<xsl:value-of
+                            select="current-group()/column[@name= 'field_key' and text()='p1_firstname']/parent::node()/column[@name= 'meta_value']/text()"
+                        />_<xsl:value-of
+                            select="current-group()/column[@name= 'field_key' and text()='p1_lastname']/parent::node()/column[@name= 'meta_value']/text()"
+                        /></key>
+                        <relation type="isManagedBy"/>
+                     </relatedObject>
+                 </xsl:if>
+
+                <xsl:if
+                    test="current-group()//column[@name='field_key']='p1_nla'">
+                    <relatedObject>
+                        <key><xsl:value-of
+                            select="current-group()/column[@name= 'field_key' and text()='p1_nla']/parent::node()/column[@name= 'meta_value']/text()"
+                        />
+                        </key>
+                        <relation type="isManagedBy"/>
+                    </relatedObject>
+                </xsl:if>
+
+                <xsl:if
+                    test="current-group()//column[@name='field_key']='co1_title' or current-group()//column[@name='field_key']='co1_firstname' or current-group()//column[@name='field_key']='co1_lastname'">
+                    <relatedObject>
+                        <key>vu/person/<xsl:value-of
+                            select="current-group()/column[@name= 'field_key' and text()='co1_firstname']/parent::node()/column[@name= 'meta_value']/text()"
+                        />_<xsl:value-of
+                            select="current-group()/column[@name= 'field_key' and text()='co1_lastname']/parent::node()/column[@name= 'meta_value']/text()"
+                        /></key>
+                        <relation type="isManagedBy"/>
+                    </relatedObject>
+                </xsl:if>
+                
+                <xsl:if
+                    test="current-group()//column[@name='field_key']='co1_nla'">
+                    <relatedObject>
+                        <key><xsl:value-of
+                            select="current-group()/column[@name= 'field_key' and text()='co1_nla']/parent::node()/column[@name= 'meta_value']/text()"
+                        />
+                        </key>
+                        <relation type="isManagedBy"/>
+                    </relatedObject>
+                </xsl:if>
+
+                <xsl:if
+                    test="current-group()//column[@name='field_key']='co2_title' or current-group()//column[@name='field_key']='co2_firstname' or current-group()//column[@name='field_key']='co2_lastname'">
+                    <relatedObject>
+                        <key>vu/person/<xsl:value-of
+                            select="current-group()/column[@name= 'field_key' and text()='co2_firstname']/parent::node()/column[@name= 'meta_value']/text()"
+                        />_<xsl:value-of
+                            select="current-group()/column[@name= 'field_key' and text()='co2_lastname']/parent::node()/column[@name= 'meta_value']/text()"
+                        /></key>
+                        <relation type="isManagedBy"/>
+                    </relatedObject>
+                </xsl:if>
+                
+                <xsl:if
+                    test="current-group()//column[@name='field_key']='co2_nla'">
+                    <relatedObject>
+                        <key><xsl:value-of
+                            select="current-group()/column[@name= 'field_key' and text()='co2_nla']/parent::node()/column[@name= 'meta_value']/text()"
+                        />
+                        </key>
+                        <relation type="isManagedBy"/>
+                    </relatedObject>
+                </xsl:if>
+
+                <xsl:if
+                    test="current-group()//column[@name='field_key']='co3_title' or current-group()//column[@name='field_key']='co3_firstname' or current-group()//column[@name='field_key']='co3_lastname'">
+                    <relatedObject>
+                        <key>vu/person/<xsl:value-of
+                            select="current-group()/column[@name= 'field_key' and text()='co3_firstname']/parent::node()/column[@name= 'meta_value']/text()"
+                        />_<xsl:value-of
+                            select="current-group()/column[@name= 'field_key' and text()='co3_lastname']/parent::node()/column[@name= 'meta_value']/text()"
+                        /></key>
+                        <relation type="isManagedBy"/>
+                    </relatedObject>
+                </xsl:if>
+                
+                <xsl:if
+                    test="current-group()//column[@name='field_key']='co3_nla'">
+                    <relatedObject>
+                        <key><xsl:value-of
+                            select="current-group()/column[@name= 'field_key' and text()='co3_nla']/parent::node()/column[@name= 'meta_value']/text()"
+                        />
+                        </key>
+                        <relation type="isManagedBy"/>
+                    </relatedObject>
+                </xsl:if>
+                
+                <xsl:if
+                    test="current-group()//column[@name='field_key']='co4_title' or current-group()//column[@name='field_key']='co4_firstname' or current-group()//column[@name='field_key']='co4_lastname'">
+                    <relatedObject>
+                        <key>vu/person/<xsl:value-of
+                            select="current-group()/column[@name= 'field_key' and text()='co4_firstname']/parent::node()/column[@name= 'meta_value']/text()"
+                        />_<xsl:value-of
+                            select="current-group()/column[@name= 'field_key' and text()='co4_lastname']/parent::node()/column[@name= 'meta_value']/text()"
+                        /></key>
+                        <relation type="isManagedBy"/>
+                    </relatedObject>
+                </xsl:if>
+                
+                <xsl:if
+                    test="current-group()//column[@name='field_key']='co4_nla'">
+                    <relatedObject>
+                        <key><xsl:value-of
+                            select="current-group()/column[@name= 'field_key' and text()='co4_nla']/parent::node()/column[@name= 'meta_value']/text()"
+                        />
+                        </key>
+                        <relation type="isManagedBy"/>
+                    </relatedObject>
+                </xsl:if>
+                
 
             </xsl:element>
         </registryObject>
