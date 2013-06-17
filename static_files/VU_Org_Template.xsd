@@ -6,9 +6,8 @@
         <xs:element name="Department">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Name" type="xs:string"/>
+              <xs:element name="Key" type="xs:string"/>
               <xs:element name="DisplayName" type="xs:string"/>
-              <xs:element name="Faculty" type="xs:string"/>
               <xs:element name="Description" type="xs:string"/>
               <xs:element name="Website" type="xs:anyURI"/>
               <xs:element name="Email" type="xs:string">   </xs:element>
