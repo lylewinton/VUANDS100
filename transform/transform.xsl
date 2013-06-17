@@ -2,13 +2,11 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns="http://ands.org.au/standards/rif-cs/registryObjects" version="2.0">
 
-
     <!-- author: Cyrus Keong-->
     <xsl:output method="xml" encoding="UTF-8" indent="yes" omit-xml-declaration="yes"/>
-    <!-- <xsl:variable name="internalOrg" select="document('VU_Orgs.xml')/*"/>-->
     <xsl:variable name="externalOrg" select="document('Externals.xml')/*"/>
     <xsl:variable name="group_description" select="'Victoria University research data'"/>
-    <xsl:variable name="originating_source" select="'thinkred.com.au'"/>
+    <xsl:variable name="originating_source" select="'ands.vulabs.net'"/>
 
     <!-- all rif-cs field_key variables-->
     <xsl:variable name="project_title_fieldkey" select="'project_title'"/>
@@ -18,203 +16,6 @@
     <xsl:variable name="rightsStatement_fieldkey" select="'rightsStatement'"/>
     <xsl:variable name="licence_fieldkey" select="'collection_license'"/>
     <xsl:variable name="accessRights_fieldkey" select="'collection_accessrights'"/>
-
-    <xsl:key name="recordlist" match="*" use="column[@name= 'field_key' and text()='project_title']/./column[@name= 'meta_value']/text()" />
-    
-    <xsl:key name="p1list" match="table" use=" concat(
-        column[@name= 'field_key' and text()='p1_firstname']/parent::node()/column[@name= 'meta_value']/text()
-        , '___',
-        column[@name= 'field_key' and text()='p1_lastname']/parent::node()/column[@name= 'meta_value']/text()
-        )"/>
-    
-    <xsl:key name="co1list" match="table" use=" concat(
-        column[@name= 'field_key' and text()='co1_firstname']/parent::node()/column[@name= 'meta_value']/text()
-        ,'___',
-        column[@name= 'field_key' and text()='co1_lastname']/parent::node()/column[@name= 'meta_value']/text()
-        )"/>
-    
-    <xsl:key name="co2list" match="table" use=" concat(
-        column[@name= 'field_key' and text()='co2_firstname']/parent::node()/column[@name= 'meta_value']/text()
-        ,'___',
-        column[@name= 'field_key' and text()='co2_lastname']/parent::node()/column[@name= 'meta_value']/text()
-        )"/>
-    
-    <xsl:key name="co3list" match="table" use=" concat(
-        column[@name= 'field_key' and text()='co3_firstname']/parent::node()/column[@name= 'meta_value']/text()
-        ,'___',
-        column[@name= 'field_key' and text()='co3_lastname']/parent::node()/column[@name= 'meta_value']/text()
-        )"/>
-      
-    <xsl:key name="co4list" match="table" use=" concat(
-        column[@name= 'field_key' and text()='co4_firstname']/parent::node()/column[@name= 'meta_value']/text()
-        ,'___',
-        column[@name= 'field_key' and text()='co4_lastname']/parent::node()/column[@name= 'meta_value']/text()
-        )"/>   
-    
-    <xsl:key name="projectlist" match="table" use="/table/column[@field_key]"/>
-
-
-
-
-    <xsl:template name="project2" match="/pma_xml_export/database/table[column[@name= 'field_key' and text()='project_title']]">
-        <xsl:param name="project_name"/>
-                <!-- column[@name= 'field_key' and text()='project_title']/parent::node()/column[@name= 'meta_value']/text()='VU Library Special Collections'/parent::node()/column[@name= 'id']-->
-        <!--
-        <xsl:for-each-group select="*"  group-by="table[column[@name='meta_value' and text()=$project_name]]/column[@name='id']/text()">
-        -->
-        <xsl:for-each-group select="table" group-by="distinct-values(column[@name='id'])">
-        
-            <xsl:comment>
-                <xsl:copy-of select="current-group()"/>
-            </xsl:comment>
-            
-            <!-- Activity Record for project-->
-            <registryObject group="Victoria University">
-                <key>vu/project/<xsl:value-of
-                    select="current-group()/column[@name= 'field_key' and text()=$project_title_fieldkey]/parent::node()/column[@name= 'meta_value']/text()"
-                /></key>
-                <originatingSource>
-                    <xsl:value-of select="$originating_source"/>
-                </originatingSource>
-                <activity type="project">
-                    
-                    <xsl:call-template name="projectTitle">
-                        <xsl:with-param name="fieldkey" select="$project_title_fieldkey"/>
-                    </xsl:call-template>
-                    
-                    <xsl:call-template name="projectBriefDesc">
-                        <xsl:with-param name="fieldkey" select="$projectBriefDesc_fieldkey"/>
-                    </xsl:call-template>
-                    
-                    <xsl:call-template name="anzsrc-for_code">
-                        <xsl:with-param name="fieldkey" select="'primary_for_code'"/>
-                    </xsl:call-template>
-                    
-                    <xsl:call-template name="anzsrc-for_code">
-                        <xsl:with-param name="fieldkey" select="'forcode_1'"/>
-                    </xsl:call-template>
-                    
-                    <xsl:call-template name="anzsrc-for_code">
-                        <xsl:with-param name="fieldkey" select="'forcode_2'"/>
-                    </xsl:call-template>
-                    
-                    <xsl:call-template name="anzsrc-for_code">
-                        <xsl:with-param name="fieldkey" select="'forcode_3'"/>
-                    </xsl:call-template>
-                    
-                    <xsl:call-template name="project_coverage"/>
-                    
-                    <relatedObject>
-                        <key>vu/collection/<xsl:value-of select="current-grouping-key()"/></key>
-                        <relation type="hasOutput"/>
-                    </relatedObject>
-                    
-                    <xsl:if test="current-group()//column[@name='field_key']='p1_external_person_key'">
-                        <relatedObject>
-                            <key>
-                                <xsl:value-of
-                                    select="current-group()/column[@name= 'field_key' and text()='p1_external_person_key']/parent::node()/column[@name= 'meta_value']/text()"
-                                />
-                            </key>
-                            <relation type="isManagedBy"/>
-                        </relatedObject>
-                    </xsl:if>
-                    
-                    
-                    <xsl:if test="current-group()//column[@name='field_key']='co1_external_person_key' or current-group()//column[@name='field_key'and text()='has_co1']/parent::node()/column[@name= 'meta_value']/text()='Yes'">
-                        <relatedObject>
-                            <key>
-                                <xsl:choose>
-                                    <xsl:when test="current-group()//column[@name='field_key']='co1_external_person_key'">
-                                        <xsl:value-of
-                                            select="current-group()/column[@name= 'field_key' and text()='co1_external_person_key']/parent::node()/column[@name= 'meta_value']/text()"
-                                        />
-                                    </xsl:when>
-                                    <xsl:otherwise>vu/person/<xsl:value-of
-                                        select="current-group()/column[@name= 'field_key' and text()='co1_firstname']/parent::node()/column[@name= 'meta_value']/text()"
-                                    />_<xsl:value-of
-                                        select="current-group()/column[@name= 'field_key' and text()='co1_lastname']/parent::node()/column[@name= 'meta_value']/text()"
-                                    />
-                                    </xsl:otherwise>
-                                </xsl:choose>
-                                
-                            </key>
-                            <relation type="hasParticipant"/>
-                        </relatedObject>
-                    </xsl:if>
-                    
-                    <xsl:if test="current-group()//column[@name='field_key']='co2_external_person_key' or current-group()//column[@name='field_key'and text()='has_co2']/parent::node()/column[@name= 'meta_value']/text()='Yes'">
-                        <relatedObject>
-                            <key>
-                                <xsl:choose>
-                                    <xsl:when test="current-group()//column[@name='field_key']='co2_external_person_key'">
-                                        <xsl:value-of
-                                            select="current-group()/column[@name= 'field_key' and text()='co2_external_person_key']/parent::node()/column[@name= 'meta_value']/text()"
-                                        />
-                                    </xsl:when>
-                                    <xsl:otherwise>vu/person/<xsl:value-of
-                                        select="current-group()/column[@name= 'field_key' and text()='co2_firstname']/parent::node()/column[@name= 'meta_value']/text()"
-                                    />_<xsl:value-of
-                                        select="current-group()/column[@name= 'field_key' and text()='co2_lastname']/parent::node()/column[@name= 'meta_value']/text()"
-                                    />
-                                    </xsl:otherwise>
-                                </xsl:choose>
-                                
-                            </key>
-                            <relation type="hasParticipant"/>
-                        </relatedObject>
-                    </xsl:if>
-                    <xsl:if test="current-group()//column[@name='field_key']='co3_external_person_key' or current-group()//column[@name='field_key'and text()='has_co3']/parent::node()/column[@name= 'meta_value']/text()='Yes'">
-                        <relatedObject>
-                            <key>
-                                <xsl:choose>
-                                    <xsl:when test="current-group()//column[@name='field_key']='co3_external_person_key'">
-                                        <xsl:value-of
-                                            select="current-group()/column[@name= 'field_key' and text()='co3_external_person_key']/parent::node()/column[@name= 'meta_value']/text()"
-                                        />
-                                    </xsl:when>
-                                    <xsl:otherwise>vu/person/<xsl:value-of
-                                        select="current-group()/column[@name= 'field_key' and text()='co3_firstname']/parent::node()/column[@name= 'meta_value']/text()"
-                                    />_<xsl:value-of
-                                        select="current-group()/column[@name= 'field_key' and text()='co3_lastname']/parent::node()/column[@name= 'meta_value']/text()"
-                                    />
-                                    </xsl:otherwise>
-                                </xsl:choose>
-                                
-                            </key>
-                            <relation type="hasParticipant"/>
-                        </relatedObject>
-                    </xsl:if>
-                    <xsl:if test="current-group()//column[@name='field_key']='co4_external_person_key' or current-group()//column[@name='field_key'and text()='has_co4']/parent::node()/column[@name= 'meta_value']/text()='Yes'">
-                        <relatedObject>
-                            <key>
-                                <xsl:choose>
-                                    <xsl:when test="current-group()//column[@name='field_key']='co4_external_person_key'">
-                                        <xsl:value-of
-                                            select="current-group()/column[@name= 'field_key' and text()='co4_external_person_key']/parent::node()/column[@name= 'meta_value']/text()"
-                                        />
-                                    </xsl:when>
-                                    <xsl:otherwise>vu/person/<xsl:value-of
-                                        select="current-group()/column[@name= 'field_key' and text()='co4_firstname']/parent::node()/column[@name= 'meta_value']/text()"
-                                    />_<xsl:value-of
-                                        select="current-group()/column[@name= 'field_key' and text()='co4_lastname']/parent::node()/column[@name= 'meta_value']/text()"
-                                    />
-                                    </xsl:otherwise>
-                                </xsl:choose>
-                                
-                            </key>
-                            <relation type="hasParticipant"/>
-                        </relatedObject>
-                    </xsl:if>
-                    
-                </activity>
-            </registryObject>
-        </xsl:for-each-group>
-    </xsl:template>
-    
-    
-
-
 
     <xsl:template match="pma_xml_export/database">
 
@@ -264,10 +65,11 @@
                                     select="current-group()//column[@name= 'field_key' and text()='p1_external_org_key']/parent::node()/column[@name= 'meta_value']/text()"
                                     disable-output-escaping="yes"/>
                             </xsl:with-param>
+                            <xsl:with-param name="current_project_id">
+                                <xsl:value-of select="current-grouping-key()"/>
+                            </xsl:with-param>
                         </xsl:call-template>
                     </xsl:if>
-
-
 
                     <!-- co1 is an external org person with existed ANDS key.-->
                     <xsl:if
@@ -292,7 +94,9 @@
                                             select="current-group()//column[@name= 'field_key' and text()='co1_faculty']/parent::node()/column[@name= 'meta_value']/text()"
                                             disable-output-escaping="yes"/>
                                     </xsl:with-param>
-
+                                    <xsl:with-param name="current_project_id">
+                                        <xsl:value-of select="current-grouping-key()"/>
+                                    </xsl:with-param>
                                 </xsl:call-template>
                             </xsl:if>
 
@@ -305,7 +109,9 @@
                                         <xsl:value-of
                                             select="current-group()//column[@name= 'field_key' and text()='co1_external_org_name']/parent::node()/column[@name= 'meta_value']/text()"
                                             disable-output-escaping="yes"/>
-
+                                    </xsl:with-param>
+                                    <xsl:with-param name="current_project_id">
+                                        <xsl:value-of select="current-grouping-key()"/>
                                     </xsl:with-param>
                                 </xsl:call-template>
                             </xsl:if>
@@ -334,6 +140,9 @@
                                             select="current-group()//column[@name= 'field_key' and text()='co2_faculty']/parent::node()/column[@name= 'meta_value']/text()"
                                             disable-output-escaping="yes"/>
                                     </xsl:with-param>
+                                    <xsl:with-param name="current_project_id">
+                                        <xsl:value-of select="current-grouping-key()"/>
+                                    </xsl:with-param>
                                 </xsl:call-template>
                             </xsl:if>
                             <xsl:if
@@ -346,6 +155,9 @@
                                             select="current-group()//column[@name= 'field_key' and text()='co2_external_org_name']/parent::node()/column[@name= 'meta_value']/text()"
                                             disable-output-escaping="yes"/>
 
+                                    </xsl:with-param>
+                                    <xsl:with-param name="current_project_id">
+                                        <xsl:value-of select="current-grouping-key()"/>
                                     </xsl:with-param>
                                 </xsl:call-template>
                             </xsl:if>
@@ -373,6 +185,9 @@
                                             select="current-group()//column[@name= 'field_key' and text()='co3_faculty']/parent::node()/column[@name= 'meta_value']/text()"
                                             disable-output-escaping="yes"/>
                                     </xsl:with-param>
+                                    <xsl:with-param name="current_project_id">
+                                        <xsl:value-of select="current-grouping-key()"/>
+                                    </xsl:with-param>
                                 </xsl:call-template>
                             </xsl:if>
                             <xsl:if
@@ -385,6 +200,9 @@
                                             select="current-group()//column[@name= 'field_key' and text()='co3_external_org_name']/parent::node()/column[@name= 'meta_value']/text()"
                                             disable-output-escaping="yes"/>
 
+                                    </xsl:with-param>
+                                    <xsl:with-param name="current_project_id">
+                                        <xsl:value-of select="current-grouping-key()"/>
                                     </xsl:with-param>
                                 </xsl:call-template>
                             </xsl:if>
@@ -414,6 +232,9 @@
                                             select="current-group()//column[@name= 'field_key' and text()='co4_faculty']/parent::node()/column[@name= 'meta_value']/text()"
                                             disable-output-escaping="yes"/>
                                     </xsl:with-param>
+                                    <xsl:with-param name="current_project_id">
+                                        <xsl:value-of select="current-grouping-key()"/>
+                                    </xsl:with-param>
                                 </xsl:call-template>
                             </xsl:if>
                             <xsl:if
@@ -427,195 +248,25 @@
                                             disable-output-escaping="yes"/>
 
                                     </xsl:with-param>
+                                    <xsl:with-param name="current_project_id">
+                                        <xsl:value-of select="current-grouping-key()"/>
+                                    </xsl:with-param>
                                 </xsl:call-template>
                             </xsl:if>
                         </xsl:if>
                     </xsl:if>
 
+                    <!-- create rifcs project record-->
                     <xsl:call-template name="project"/>
+                    
+                    <!--create rifcs collection record-->
                     <xsl:call-template name="collection"/>
 
                 </xsl:if>
 
             </xsl:for-each-group>
         </registryObjects>
- 
-      
-  
-        <!-- find out all projects within the source-->
-        <xsl:for-each-group select="*" group-by="distinct-values(column[@name= 'field_key' and text()='project_title']/parent::node()/column[@name= 'meta_value']/text())">
-            
-            <xsl:comment>
-                    project key = <xsl:value-of select="current-grouping-key()"/>
-            </xsl:comment>
-            
-            <xsl:call-template name="project2">
-                <xsl:with-param name="project_name"><xsl:value-of select="current-grouping-key()"/></xsl:with-param>
-            </xsl:call-template>
-           
-        </xsl:for-each-group>
-     
-        
-       <xsl:variable name="p1_name">  
-           
-           <xsl:for-each-group select="table" group-by="distinct-values(column[@name='id'])">
-               
-        <xsl:for-each-group  select="current-group()"    group-by="
-            distinct-values(concat(
-            current-group()//column[@name= 'field_key' and text()='p1_firstname']/parent::node()/column[@name= 'meta_value']/text()
-            ,'_',
-            current-group()//column[@name= 'field_key' and text()='p1_lastname']/parent::node()/column[@name= 'meta_value']/text()
-          )
-          
-          
-          )">
-            
-            <xsl:copy-of select="current-grouping-key()"/>
-
-            
-            
-            <!--
-            <xsl:choose>
-                <xsl:when test="current-grouping-key() = 1">
-                
-                        <xsl:for-each select="current-group()">
-                            <xsl:comment>cyrus test <xsl:copy-of select="current-grouping-key()"/></xsl:comment>
-                            
-                             </xsl:for-each>
-                 
-                </xsl:when>
-                
-                <xsl:when test="current-grouping-key() = 2">
-                    
-                        <xsl:for-each select="current-group()">
-                            <xsl:comment>cyrus test <xsl:copy-of select="current-grouping-key()"/></xsl:comment>
-                            
-                              </xsl:for-each>
-                  
-                </xsl:when>
-   
-                <xsl:when test="current-grouping-key() = 3">
-            
-                        <xsl:for-each select="current-group()">
-                            <xsl:comment>cyrus test <xsl:copy-of select="current-grouping-key()"/></xsl:comment>
-                            
-                           </xsl:for-each>
-                 
-                </xsl:when>
-   
-                <xsl:otherwise>
-                    <xsl:for-each select="current-group()">
-                        
-                        <xsl:comment>cyrus test <xsl:copy-of select="current-grouping-key()"/></xsl:comment>
-                        
-                      
-                    </xsl:for-each>
-                </xsl:otherwise>
-                
-            </xsl:choose>
-           -->
-        </xsl:for-each-group>
-        </xsl:for-each-group>
-       </xsl:variable>   
-           
-           
-     <xsl:variable name="co1_name">  
-         <xsl:for-each-group select="table" group-by="distinct-values(column[@name='id'])">
-             
-                <xsl:for-each-group  select="current-group()"    group-by="
-                    concat(
-                    current-group()//column[@name= 'field_key' and text()='co1_firstname']/parent::node()/column[@name= 'meta_value']/text()
-                    ,'_',
-                    current-group()//column[@name= 'field_key' and text()='co1_lastname']/parent::node()/column[@name= 'meta_value']/text()
-                    ) ">
-                    <xsl:if test="current-grouping-key()!='_'">
-                        <xsl:copy-of select="current-grouping-key()"/></xsl:if>
-                </xsl:for-each-group>
-                </xsl:for-each-group>
-            </xsl:variable>   
-            
-            <xsl:variable name="co2_name"> 
-                <xsl:for-each-group select="table" group-by="distinct-values(column[@name='id'])">
-                    
-                    
-                <xsl:for-each-group  select="current-group()"    group-by="
-                    concat(
-                    current-group()//column[@name= 'field_key' and text()='co2_firstname']/parent::node()/column[@name= 'meta_value']/text()
-                    ,'_',
-                    current-group()//column[@name= 'field_key' and text()='co2_lastname']/parent::node()/column[@name= 'meta_value']/text()
-                    ) ">
-                    <xsl:if test="current-grouping-key()!='_'">
-                    <xsl:copy-of select="current-grouping-key()"/>
-                    </xsl:if>
-                </xsl:for-each-group>
-                </xsl:for-each-group>
-            </xsl:variable>  
-           
-            <xsl:variable name="co3_name">  
-                <xsl:for-each-group select="table" group-by="distinct-values(column[@name='id'])">
-                    
-                <xsl:for-each-group  select="current-group()"    group-by="
-                    concat(
-                    current-group()//column[@name= 'field_key' and text()='co3_firstname']/parent::node()/column[@name= 'meta_value']/text()
-                    ,'_',
-                    current-group()//column[@name= 'field_key' and text()='co3_lastname']/parent::node()/column[@name= 'meta_value']/text()
-                    ) ">
-                    <xsl:if test="current-grouping-key()!='_'">
-                    <xsl:copy-of select="current-grouping-key()"/>
-                    </xsl:if>
-                </xsl:for-each-group>
-                </xsl:for-each-group>
-            </xsl:variable>  
-           
-            <xsl:variable name="co4_name"> 
-                <xsl:for-each-group select="table" group-by="distinct-values(column[@name='id'])">
-                    
-                <xsl:for-each-group  select="current-group()"    group-by="
-                    concat(
-                    current-group()//column[@name= 'field_key' and text()='co4_firstname']/parent::node()/column[@name= 'meta_value']/text()
-                    ,'_',
-                    current-group()//column[@name= 'field_key' and text()='co4_lastname']/parent::node()/column[@name= 'meta_value']/text()
-                    ) ">
-                    <xsl:if test="current-grouping-key()!='_'">
-                    <xsl:copy-of select="current-grouping-key()"/>
-                    </xsl:if>
-                </xsl:for-each-group>
-                </xsl:for-each-group>
-            </xsl:variable> 
-        
-        <xsl:variable name="vals" select="distinct-values(concat(distinct-values($p1_name),distinct-values($co1_name),distinct-values($co2_name),distinct-values($co3_name),distinct-values($co4_name)))"/>
-        
-        <xsl:variable name="all_parties">
-            
-       <xsl:value-of select="distinct-values($p1_name, concat($co1_name,concat($co2_name,concat($co3_name,$co4_name))))" />
-         </xsl:variable> 
-           
-           
-           <xsl:comment>
-           p1: <xsl:copy-of select="$p1_name"/>
-          
-          co1: <xsl:copy-of select="$co1_name"/>
-    
-            co2: <xsl:copy-of select="$co2_name"/>
-    
-         co3: <xsl:copy-of select="$co3_name"/>
-        
-        co4: <xsl:copy-of select="$co4_name"/>
        
-        <xsl:for-each select="distinct-values($vals)">
-        all_parties: <xsl:copy-of select="."/>
-        </xsl:for-each>
-        
-        </xsl:comment>
-        
-        
-        
-        
-        
-        
-        
-        
-        
     </xsl:template>
         
     <!-- sub templates -->
@@ -628,10 +279,10 @@
 
             <registryObject group="Victoria University">
                 <key>vu/person/<xsl:value-of
-                        select="current-group()/column[@name= 'field_key' and text()='p1_firstname']/parent::node()/column[@name= 'meta_value']/text()"
-                        />_<xsl:value-of
-                        select="current-group()/column[@name= 'field_key' and text()='p1_lastname']/parent::node()/column[@name= 'meta_value']/text()"
-                    /></key>
+                    select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='p1_firstname']/parent::node()/column[@name= 'hash']/text()"
+                />_<xsl:value-of
+                    select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='p1_lastname']/parent::node()/column[@name= 'hash']/text()"
+                /></key>
 
                 <originatingSource>
                     <xsl:value-of select="$originating_source"/>
@@ -653,29 +304,63 @@
                             <xsl:with-param name="fieldkey" select="'p1_lastname'"/>
                         </xsl:call-template>
 
-
                     </name>
-
                    
                     <xsl:call-template name="partyNLA">
                         <xsl:with-param name="fieldkey" select="'p1_nla'"/>
                     </xsl:call-template>
 
-                    
+                    <!-- create reverse relationship from P1 to Collection -->
                     <xsl:if test="current-group()//column[@name='field_key']='p1_relationship'">
                         <relatedObject>
-                            <key>vu/collection/<xsl:value-of select="current-grouping-key()"/></key>
-
-                            <xsl:if
-                                test="current-group()/column[@name= 'field_key' and text()='p1_relationship']/parent::node()/column[@name= 'meta_value']/text()='Project Owner'">
-                                <relation type="isOwnerOf"/>
-                            </xsl:if>
-                            <xsl:if
-                                test="current-group()/column[@name= 'field_key' and text()='p1_relationship']/parent::node()/column[@name= 'meta_value']/text()='Manager / Contact'">
-                                <relation type="isManagerOf"/>
-                            </xsl:if>
+                            <key>vu/collection/<xsl:value-of select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='collection_title']/parent::node()/column[@name= 'hash']/text()"/></key>
+                                                       
+                            <xsl:choose>
+                                <xsl:when test="current-group()/column[@name= 'field_key' and text()='p1_relationship']/parent::node()/column[@name= 'meta_value']/text()='Project Owner'">
+                                    <relation type="isCollectorOf"/>
+                                </xsl:when>
+                                <xsl:when test="current-group()/column[@name= 'field_key' and text()='p1_relationship']/parent::node()/column[@name= 'meta_value']/text()='Manager / Contact'">
+                                    <relation type="isManagerOf"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <relation type="isCollectorOf"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
                         </relatedObject>
                     </xsl:if>
+                    
+                    <!-- create reverse relationship from P1 to Project -->
+                    <xsl:if test="current-group()//column[@name='field_key']='p1_relationship'">
+                        <relatedObject>
+                            <key>vu/project/<xsl:value-of select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='project_title']/parent::node()/column[@name= 'hash']/text()"/></key>
+                            
+                            <xsl:choose>
+                                <xsl:when test="current-group()/column[@name= 'field_key' and text()='p1_relationship']/parent::node()/column[@name= 'meta_value']/text()='Project Owner'">
+                                    <relation type="isManagerOf"/>
+                                </xsl:when>
+                                <xsl:when test="current-group()/column[@name= 'field_key' and text()='p1_relationship']/parent::node()/column[@name= 'meta_value']/text()='Manager / Contact'">
+                                    <relation type="isManagerOf"/>
+                                </xsl:when>
+                                <xsl:otherwise> 
+                                    <relation type="isManagerOf"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                  </relatedObject>
+                    </xsl:if>
+                    
+                    <!--create relationship from P1 to external organization-->
+                    <xsl:if test="current-group()//column[@name='field_key'and text()='p1_internal']/parent::node()/column[@name= 'meta_value']/text()='No'">
+                        
+                        <xsl:variable name="external_org_name" 
+                            select="current-group()//column[@name= 'field_key' and text()='p1_external_org_name']/parent::node()/column[@name= 'meta_value']/text()"/>
+                        <xsl:variable name="org_ext_id"
+                            select="$externalOrg//Department[@id=$external_org_name]/Key/text()"/>
+                        <relatedObject>
+                            <key>vu.edu.au/org-<xsl:value-of select="$org_ext_id"/></key>
+                            <relation type="isMemberOf"/>
+                        </relatedObject>
+                    </xsl:if>
+                    
                     <xsl:call-template name="rifcs_location">
                         <xsl:with-param name="email_fieldkey" select="'p1_email'"/>
                     </xsl:call-template>
@@ -695,10 +380,10 @@
             test="current-group()//column[@name='field_key']='co1_title' or current-group()//column[@name='field_key']='co1_firstname' or current-group()//column[@name='field_key']='co1_lastname' or current-group()//column[@name='field_key']='co1_nla'">
             <registryObject group="Victoria University">
                 <key>vu/person/<xsl:value-of
-                        select="current-group()/column[@name= 'field_key' and text()='co1_firstname']/parent::node()/column[@name= 'meta_value']/text()"
-                        />_<xsl:value-of
-                        select="current-group()/column[@name= 'field_key' and text()='co1_lastname']/parent::node()/column[@name= 'meta_value']/text()"
-                    /></key>
+                    select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co1_firstname']/parent::node()/column[@name= 'hash']/text()"
+                />_<xsl:value-of
+                    select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co1_lastname']/parent::node()/column[@name= 'hash']/text()"
+                /></key>
 
                 <originatingSource>
                     <xsl:value-of select="$originating_source"/>
@@ -729,11 +414,54 @@
                         <xsl:with-param name="email_fieldkey" select="'co1_email'"/>
                     </xsl:call-template>
 
-                    <relatedObject>
-                        <key>vu/collection/<xsl:value-of select="current-grouping-key()"/></key>
-                        <relation type="isParticipantIn"/>
-                    </relatedObject>
-
+                    <!-- create reverse relationship from co1 to Collection -->
+                  
+                        <relatedObject>
+                            <key>vu/collection/<xsl:value-of select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='collection_title']/parent::node()/column[@name= 'hash']/text()"/></key>
+                            <xsl:choose>
+                                <xsl:when test="current-group()/column[@name= 'field_key' and text()='co1_relationship']/parent::node()/column[@name= 'meta_value' and text()='Investigator']">
+                                    <relation type="isCollectorOf"/>
+                                </xsl:when>
+                                <xsl:when test="current-group()//column[@name= 'field_key' and text()='co1_relationship']/parent::node()/column[@name= 'meta_value' and text()='Manager / Contact']">
+                                    <relation type="isManagedOf"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <relation type="isCollectorOf"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                          </relatedObject>
+                    
+                    
+                    <!-- create reverse relationship from co1 to Project -->
+                          <relatedObject>
+                            <key>vu/project/<xsl:value-of select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='project_title']/parent::node()/column[@name= 'hash']/text()"/></key>
+                            
+                            <xsl:choose>
+                                <xsl:when test="current-group()//column[@name= 'field_key' and text()='co1_relationship']/parent::node()/column[@name= 'meta_value' and text()='Investigator']">
+                                    <relation type="isParticipantIn"/>
+                                </xsl:when>
+                                <xsl:when test="current-group()//column[@name= 'field_key' and text()='co1_relationship']/parent::node()/column[@name= 'meta_value' and text()='Manager / Contact']">
+                                    <relation type="isManagedOf"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <relation type="isParticipantIn"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </relatedObject>
+              
+                    <!--create relationship from co1 to external organization-->
+                    <xsl:if test="current-group()//column[@name='field_key'and text()='co1_internal']/parent::node()/column[@name= 'meta_value']/text()='No'">
+                        
+                        <xsl:variable name="external_org_name" 
+                            select="current-group()//column[@name= 'field_key' and text()='co1_external_org_name']/parent::node()/column[@name= 'meta_value']/text()"/>
+                        <xsl:variable name="org_ext_id"
+                            select="$externalOrg//Department[@id=$external_org_name]/Key/text()"/>
+                        <relatedObject>
+                            <key>vu.edu.au/org-<xsl:value-of select="$org_ext_id"/></key>
+                            <relation type="isMemberOf"/>
+                        </relatedObject>
+                    </xsl:if>
+                    
                 </party>
             </registryObject>
         </xsl:if>
@@ -747,10 +475,10 @@
             test="current-group()//column[@name='field_key']='co2_title' or current-group()//column[@name='field_key']='co2_firstname' or current-group()//column[@name='field_key']='co2_lastname' or current-group()//column[@name='field_key']='co2_nla'">
             <registryObject group="Victoria University">
                 <key>vu/person/<xsl:value-of
-                        select="current-group()/column[@name= 'field_key' and text()='co2_firstname']/parent::node()/column[@name= 'meta_value']/text()"
-                        />_<xsl:value-of
-                        select="current-group()/column[@name= 'field_key' and text()='co2_lastname']/parent::node()/column[@name= 'meta_value']/text()"
-                    /></key>
+                    select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co2_firstname']/parent::node()/column[@name= 'hash']/text()"
+                />_<xsl:value-of
+                    select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co2_lastname']/parent::node()/column[@name= 'hash']/text()"
+                /></key>
 
                 <originatingSource>
                     <xsl:value-of select="$originating_source"/>
@@ -780,11 +508,50 @@
                         <xsl:with-param name="email_fieldkey" select="'co2_email'"/>
                     </xsl:call-template>
 
-                    <relatedObject>
-                        <key>vu/collection/<xsl:value-of select="current-grouping-key()"/></key>
-                        <relation type="isParticipantIn"/>
-                    </relatedObject>
+                    <!-- create reverse relationship from co2 to Collection -->
+                        <relatedObject>
+                            <key>vu/collection/<xsl:value-of select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='collection_title']/parent::node()/column[@name= 'hash']/text()"/></key>
+                            <xsl:choose>
+                                <xsl:when test="current-group()/column[@name= 'field_key' and text()='co2_relationship']/parent::node()/column[@name= 'meta_value']/text()='Investigator'">
+                                    <relation type="isCollectorOf"/>
+                                </xsl:when>
+                                <xsl:when test="current-group()/column[@name= 'field_key' and text()='co2_relationship']/parent::node()/column[@name= 'meta_value']/text()='Manager / Contact'">
+                                    <relation type="isManagedOf"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <relation type="isCollectorOf"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </relatedObject>
+                    
+                    <!-- create reverse relationship from co2 to Project -->
+                        <relatedObject>
+                            <key>vu/project/<xsl:value-of select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='project_title']/parent::node()/column[@name= 'hash']/text()"/></key>
+                            <xsl:choose>
+                                <xsl:when test="current-group()/column[@name= 'field_key' and text()='co2_relationship']/parent::node()/column[@name= 'meta_value']/text()='Investigator'">
+                                    <relation type="isParticipantIn"/>
+                                </xsl:when>
+                                <xsl:when test="current-group()/column[@name= 'field_key' and text()='co2_relationship']/parent::node()/column[@name= 'meta_value']/text()='Manager / Contact'">
+                                    <relation type="isManagedOf"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <relation type="isParticipantIn"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </relatedObject>
 
+                    <!--create relationship from co2 to external organization-->
+                    <xsl:if test="current-group()//column[@name='field_key'and text()='co2_internal']/parent::node()/column[@name= 'meta_value']/text()='No'">
+                        
+                        <xsl:variable name="external_org_name" 
+                            select="current-group()//column[@name= 'field_key' and text()='co2_external_org_name']/parent::node()/column[@name= 'meta_value']/text()"/>
+                        <xsl:variable name="org_ext_id"
+                            select="$externalOrg//Department[@id=$external_org_name]/Key/text()"/>
+                        <relatedObject>
+                            <key>vu.edu.au/org-<xsl:value-of select="$org_ext_id"/></key>
+                            <relation type="isMemberOf"/>
+                        </relatedObject>
+                    </xsl:if>
                 </party>
             </registryObject>
         </xsl:if>
@@ -798,10 +565,10 @@
             test="current-group()//column[@name='field_key']='co3_title' or current-group()//column[@name='field_key']='co3_firstname' or current-group()//column[@name='field_key']='co3_lastname' or current-group()//column[@name='field_key']='co3_nla'">
             <registryObject group="Victoria University">
                 <key>vu/person/<xsl:value-of
-                        select="current-group()/column[@name= 'field_key' and text()='co3_firstname']/parent::node()/column[@name= 'meta_value']/text()"
-                        />_<xsl:value-of
-                        select="current-group()/column[@name= 'field_key' and text()='co3_lastname']/parent::node()/column[@name= 'meta_value']/text()"
-                    /></key>
+                    select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co3_firstname']/parent::node()/column[@name= 'hash']/text()"
+                />_<xsl:value-of
+                    select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co3_lastname']/parent::node()/column[@name= 'hash']/text()"
+                /></key>
 
                 <originatingSource>
                     <xsl:value-of select="$originating_source"/>
@@ -830,10 +597,52 @@
                     <xsl:call-template name="rifcs_location">
                         <xsl:with-param name="email_fieldkey" select="'co3_email'"/>
                     </xsl:call-template>
-                    <relatedObject>
-                        <key>vu/collection/<xsl:value-of select="current-grouping-key()"/></key>
-                        <relation type="isParticipantIn"/>
-                    </relatedObject>
+                    
+                    <!-- create reverse relationship from co3 to Collection -->
+                        <relatedObject>
+                            <key>vu/collection/<xsl:value-of select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='collection_title']/parent::node()/column[@name= 'hash']/text()"/></key>
+                            <xsl:choose>
+                                <xsl:when test="current-group()/column[@name= 'field_key' and text()='co3_relationship']/parent::node()/column[@name= 'meta_value']/text()='Investigator'">
+                                    <relation type="isCollectorOf"/>
+                                </xsl:when>
+                                <xsl:when  test="current-group()/column[@name= 'field_key' and text()='co3_relationship']/parent::node()/column[@name= 'meta_value']/text()='Manager / Contact'">
+                                    <relation type="isManagedOf"/> 
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <relation type="isCollectorOf"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </relatedObject>
+                    
+                    <!-- create reverse relationship from co3 to Project -->
+                        <relatedObject>
+                            <key>vu/project/<xsl:value-of select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='project_title']/parent::node()/column[@name= 'hash']/text()"/></key>
+                            <xsl:choose>
+                                <xsl:when test="current-group()/column[@name= 'field_key' and text()='co3_relationship']/parent::node()/column[@name= 'meta_value']/text()='Investigator'">
+                                    <relation type="isParticipantIn"/>
+                                </xsl:when>
+                                <xsl:when test="current-group()/column[@name= 'field_key' and text()='co3_relationship']/parent::node()/column[@name= 'meta_value']/text()='Manager / Contact'">
+                                    <relation type="isManagedOf"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <relation type="isParticipantIn"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </relatedObject>
+                    
+                    <!--create relationship from co3 to external organization-->
+                    <xsl:if test="current-group()//column[@name='field_key'and text()='co3_internal']/parent::node()/column[@name= 'meta_value']/text()='No'">
+                        
+                        <xsl:variable name="external_org_name" 
+                            select="current-group()//column[@name= 'field_key' and text()='co3_external_org_name']/parent::node()/column[@name= 'meta_value']/text()"/>
+                        <xsl:variable name="org_ext_id"
+                            select="$externalOrg//Department[@id=$external_org_name]/Key/text()"/>
+                        <relatedObject>
+                            <key>vu.edu.au/org-<xsl:value-of select="$org_ext_id"/></key>
+                            <relation type="isMemberOf"/>
+                        </relatedObject>
+                    </xsl:if>
+                    
                 </party>
             </registryObject>
         </xsl:if>
@@ -848,10 +657,10 @@
 
             <registryObject group="Victoria University">
                 <key>vu/person/<xsl:value-of
-                        select="current-group()/column[@name= 'field_key' and text()='co4_firstname']/parent::node()/column[@name= 'meta_value']/text()"
-                        />_<xsl:value-of
-                        select="current-group()/column[@name= 'field_key' and text()='co4_lastname']/parent::node()/column[@name= 'meta_value']/text()"
-                    /></key>
+                    select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co4_firstname']/parent::node()/column[@name= 'hash']/text()"
+                />_<xsl:value-of
+                    select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co4_lastname']/parent::node()/column[@name= 'hash']/text()"
+                /></key>
                 <originatingSource>
                     <xsl:value-of select="$originating_source"/>
                 </originatingSource>
@@ -879,12 +688,51 @@
                         <xsl:with-param name="email_fieldkey" select="'co4_email'"/>
                     </xsl:call-template>
 
-                    <relatedObject>
-                        <key>vu/collection/<xsl:value-of
-                                select="current-group()/column[@name= 'field_key' and text()=$project_title_fieldkey]/parent::node()/column[@name= 'meta_value']/text()"
-                            /></key>
-                        <relation type="isParticipantIn"/>
-                    </relatedObject>
+
+                    <!-- create reverse relationship from co4 to Collection -->
+                        <relatedObject>
+                            <key>vu/collection/<xsl:value-of select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='collection_title']/parent::node()/column[@name= 'hash']/text()"/></key>
+                            <xsl:choose>
+                                <xsl:when test="current-group()/column[@name= 'field_key' and text()='co4_relationship']/parent::node()/column[@name= 'meta_value']/text()='Investigator'">
+                                    <relation type="isCollectorOf"/>
+                                </xsl:when>
+                                <xsl:when  test="current-group()/column[@name= 'field_key' and text()='co4_relationship']/parent::node()/column[@name= 'meta_value']/text()='Manager / Contact'">
+                                    <relation type="isManagedOf"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <relation type="isCollectorOf"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </relatedObject>
+                    
+                    <!-- create reverse relationship from co4 to Project -->
+                        <relatedObject>
+                            <key>vu/project/<xsl:value-of select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='project_title']/parent::node()/column[@name= 'hash']/text()"/></key>
+                            <xsl:choose>
+                                <xsl:when test="current-group()/column[@name= 'field_key' and text()='co4_relationship']/parent::node()/column[@name= 'meta_value']/text()='Investigator'">
+                                    <relation type="isParticipantIn"/>
+                                </xsl:when>
+                                <xsl:when test="current-group()/column[@name= 'field_key' and text()='co4_relationship']/parent::node()/column[@name= 'meta_value']/text()='Manager / Contact'">
+                                    <relation type="isManagedOf"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <relation type="isParticipantIn"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </relatedObject>
+                    
+                    <!--create relationship from co4 to external organization-->
+                    <xsl:if test="current-group()//column[@name='field_key'and text()='co4_internal']/parent::node()/column[@name= 'meta_value']/text()='No'">
+                        
+                        <xsl:variable name="external_org_name" 
+                            select="current-group()//column[@name= 'field_key' and text()='co4_external_org_name']/parent::node()/column[@name= 'meta_value']/text()"/>
+                        <xsl:variable name="org_ext_id"
+                            select="$externalOrg//Department[@id=$external_org_name]/Key/text()"/>
+                        <relatedObject>
+                            <key>vu.edu.au/org-<xsl:value-of select="$org_ext_id"/></key>
+                            <relation type="isMemberOf"/>
+                        </relatedObject>
+                    </xsl:if>
                </party>
             </registryObject>
         </xsl:if>
@@ -895,7 +743,7 @@
         <!-- Activity Record for project-->
         <registryObject group="Victoria University">
             <key>vu/project/<xsl:value-of
-                    select="current-group()/column[@name= 'field_key' and text()=$project_title_fieldkey]/parent::node()/column[@name= 'meta_value']/text()"
+                select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()=$project_title_fieldkey]/parent::node()/column[@name= 'hash']/text()"
                 /></key>
             <originatingSource>
                 <xsl:value-of select="$originating_source"/>
@@ -929,22 +777,31 @@
                 <xsl:call-template name="project_coverage"/>
 
                 <relatedObject>
-                    <key>vu/collection/<xsl:value-of select="current-grouping-key()"/></key>
+                    <key>vu/collection/<xsl:value-of select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='collection_title']/parent::node()/column[@name= 'hash']/text()"/></key>
                     <relation type="hasOutput"/>
                 </relatedObject>
 
-                <xsl:if test="current-group()//column[@name='field_key']='p1_external_person_key'">
-                    <relatedObject>
+                <!-- create relationship from project to p1 -->
+                <relatedObject>
                         <key>
-                            <xsl:value-of
-                                select="current-group()/column[@name= 'field_key' and text()='p1_external_person_key']/parent::node()/column[@name= 'meta_value']/text()"
-                            />
+                            <xsl:choose>
+                                <xsl:when test="current-group()//column[@name='field_key']='p1_external_person_key'">
+                                    <xsl:value-of
+                                        select="current-group()/column[@name= 'field_key' and text()='p1_external_person_key']/parent::node()/column[@name= 'meta_value']/text()"
+                                    />
+                                </xsl:when>
+                                <xsl:otherwise>vu/person/<xsl:value-of
+                                    select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='p1_firstname']/parent::node()/column[@name= 'hash']/text()"
+                                />_<xsl:value-of
+                                    select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='p1_lastname']/parent::node()/column[@name= 'hash']/text()"
+                                />
+                                </xsl:otherwise>
+                            </xsl:choose>
                         </key>
                         <relation type="isManagedBy"/>
                     </relatedObject>
-                </xsl:if>
 
-               
+                <!-- create relationship from project to co1 -->
                 <xsl:if test="current-group()//column[@name='field_key']='co1_external_person_key' or current-group()//column[@name='field_key'and text()='has_co1']/parent::node()/column[@name= 'meta_value']/text()='Yes'">
                     <relatedObject>
                         <key>
@@ -955,18 +812,27 @@
                             />
                                 </xsl:when>
                                 <xsl:otherwise>vu/person/<xsl:value-of
-                                        select="current-group()/column[@name= 'field_key' and text()='co1_firstname']/parent::node()/column[@name= 'meta_value']/text()"
-                                    />_<xsl:value-of
-                                        select="current-group()/column[@name= 'field_key' and text()='co1_lastname']/parent::node()/column[@name= 'meta_value']/text()"
-                                    />
+                                    select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co1_firstname']/parent::node()/column[@name= 'hash']/text()"
+                                />_<xsl:value-of
+                                    select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co1_lastname']/parent::node()/column[@name= 'hash']/text()"
+                                />
                                 </xsl:otherwise>
                             </xsl:choose>
                            
                         </key>
-                        <relation type="hasParticipant"/>
+                        <xsl:choose>
+                            <xsl:when test="current-group()//column[@name='field_key'and text()='co1_relationship']/parent::node()/column[@name= 'meta_value']/text()='Manager / Contact'">
+                                <relation type="isManagedBy"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <relation type="hasParticipant"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                       
                     </relatedObject>
                 </xsl:if>
 
+                <!-- create relationship from project to co2 -->
                 <xsl:if test="current-group()//column[@name='field_key']='co2_external_person_key' or current-group()//column[@name='field_key'and text()='has_co2']/parent::node()/column[@name= 'meta_value']/text()='Yes'">
                     <relatedObject>
                         <key>
@@ -977,17 +843,26 @@
                                     />
                                 </xsl:when>
                                 <xsl:otherwise>vu/person/<xsl:value-of
-                                        select="current-group()/column[@name= 'field_key' and text()='co2_firstname']/parent::node()/column[@name= 'meta_value']/text()"
-                                    />_<xsl:value-of
-                                        select="current-group()/column[@name= 'field_key' and text()='co2_lastname']/parent::node()/column[@name= 'meta_value']/text()"
-                                    />
+                                    select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co2_firstname']/parent::node()/column[@name= 'hash']/text()"
+                                />_<xsl:value-of
+                                    select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co2_lastname']/parent::node()/column[@name= 'hash']/text()"
+                                />
                                 </xsl:otherwise>
                             </xsl:choose>
                             
                         </key>
-                        <relation type="hasParticipant"/>
+                        <xsl:choose>
+                            <xsl:when test="current-group()//column[@name='field_key'and text()='co2_relationship']/parent::node()/column[@name= 'meta_value']/text()='Manager / Contact'">
+                                <relation type="isManagedBy"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <relation type="hasParticipant"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </relatedObject>
                 </xsl:if>
+                
+                <!-- create relationship from project to co3 -->
                 <xsl:if test="current-group()//column[@name='field_key']='co3_external_person_key' or current-group()//column[@name='field_key'and text()='has_co3']/parent::node()/column[@name= 'meta_value']/text()='Yes'">
                     <relatedObject>
                         <key>
@@ -998,17 +873,26 @@
                                     />
                                 </xsl:when>
                                 <xsl:otherwise>vu/person/<xsl:value-of
-                                        select="current-group()/column[@name= 'field_key' and text()='co3_firstname']/parent::node()/column[@name= 'meta_value']/text()"
-                                    />_<xsl:value-of
-                                        select="current-group()/column[@name= 'field_key' and text()='co3_lastname']/parent::node()/column[@name= 'meta_value']/text()"
-                                    />
+                                    select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co3_firstname']/parent::node()/column[@name= 'hash']/text()"
+                                />_<xsl:value-of
+                                    select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co3_lastname']/parent::node()/column[@name= 'hash']/text()"
+                                />
                                 </xsl:otherwise>
                             </xsl:choose>
                             
                         </key>
-                        <relation type="hasParticipant"/>
+                        <xsl:choose>
+                            <xsl:when test="current-group()//column[@name='field_key'and text()='co3_relationship']/parent::node()/column[@name= 'meta_value']/text()='Manager / Contact'">
+                                <relation type="isManagedBy"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <relation type="hasParticipant"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </relatedObject>
                 </xsl:if>
+                
+                <!-- create relationship from project to co4 -->
                 <xsl:if test="current-group()//column[@name='field_key']='co4_external_person_key' or current-group()//column[@name='field_key'and text()='has_co4']/parent::node()/column[@name= 'meta_value']/text()='Yes'">
                     <relatedObject>
                         <key>
@@ -1019,16 +903,88 @@
                                     />
                                 </xsl:when>
                                 <xsl:otherwise>vu/person/<xsl:value-of
-                                        select="current-group()/column[@name= 'field_key' and text()='co4_firstname']/parent::node()/column[@name= 'meta_value']/text()"
-                                    />_<xsl:value-of
-                                        select="current-group()/column[@name= 'field_key' and text()='co4_lastname']/parent::node()/column[@name= 'meta_value']/text()"
-                                    />
+                                    select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co4_firstname']/parent::node()/column[@name= 'hash']/text()"
+                                />_<xsl:value-of
+                                    select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co4_lastname']/parent::node()/column[@name= 'hash']/text()"
+                                />
                                 </xsl:otherwise>
                             </xsl:choose>
                             
                         </key>
+                        <xsl:choose>
+                            <xsl:when test="current-group()//column[@name='field_key'and text()='co4_relationship']/parent::node()/column[@name= 'meta_value']/text()='Manager / Contact'">
+                                <relation type="isManagedBy"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <relation type="hasParticipant"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </relatedObject>
+                </xsl:if>
+                
+                <!-- create relationship from project to external-p1 -->
+                <xsl:if test="current-group()//column[@name='field_key'and text()='p1_internal']/parent::node()/column[@name= 'meta_value']/text()='No'">
+                    <relatedObject>
+                        <xsl:variable name="external_org_name" 
+                                select="current-group()//column[@name= 'field_key' and text()='p1_external_org_name']/parent::node()/column[@name= 'meta_value']/text()"/>
+                        <xsl:variable name="org_ext_id"
+                            select="$externalOrg//Department[@id=$external_org_name]/Key/text()"/>
+                            <key>vu.edu.au/org-<xsl:value-of select="$org_ext_id"/></key>
                         <relation type="hasParticipant"/>
                     </relatedObject>
+                </xsl:if>
+                
+                <!-- create relationship from project to external-co1 -->
+                <xsl:if test="current-group()//column[@name='field_key'and text()='co1_internal']/parent::node()/column[@name= 'meta_value']/text()='No'">
+                    <relatedObject>
+                        
+                            <xsl:variable name="external_org_name" 
+                                select="current-group()//column[@name= 'field_key' and text()='co1_external_org_name']/parent::node()/column[@name= 'meta_value']/text()"/>
+                            <xsl:variable name="org_ext_id"
+                            select="$externalOrg//Department[@id=$external_org_name]/Key/text()"/>
+                                <key>vu.edu.au/org-<xsl:value-of select="$org_ext_id"/></key>
+                   
+                        <relation type="hasParticipant"/>
+                    </relatedObject>
+                </xsl:if>
+                
+                <!-- create relationship from project to external-co2 -->
+                <xsl:if test="current-group()//column[@name='field_key'and text()='co2_internal']/parent::node()/column[@name= 'meta_value']/text()='No'">
+                    <relatedObject>
+                        
+                        <xsl:variable name="external_org_name" 
+                            select="current-group()//column[@name= 'field_key' and text()='co2_external_org_name']/parent::node()/column[@name= 'meta_value']/text()"/>
+                        <xsl:variable name="org_ext_id"
+                            select="$externalOrg//Department[@id=$external_org_name]/Key/text()"/>
+                        <key>vu.edu.au/org-<xsl:value-of select="$org_ext_id"/></key>
+                        
+                        <relation type="hasParticipant"/>
+                    </relatedObject>
+                </xsl:if>
+                
+                <!-- create relationship from project to external-co3 -->
+                <xsl:if test="current-group()//column[@name='field_key'and text()='co3_internal']/parent::node()/column[@name= 'meta_value']/text()='No'">
+                    <relatedObject>
+                        
+                        <xsl:variable name="external_org_name" 
+                            select="current-group()//column[@name= 'field_key' and text()='co3_external_org_name']/parent::node()/column[@name= 'meta_value']/text()"/>
+                        <xsl:variable name="org_ext_id"
+                            select="$externalOrg//Department[@id=$external_org_name]/Key/text()"/>
+                        <key>vu.edu.au/org-<xsl:value-of select="$org_ext_id"/></key>
+                        
+                        <relation type="hasParticipant"/>
+                    </relatedObject>
+                </xsl:if>
+                
+                <!-- create relationship from project to external-co4 -->
+                <xsl:if test="current-group()//column[@name='field_key'and text()='co4_internal']/parent::node()/column[@name= 'meta_value']/text()='No'">
+                    
+                    <xsl:variable name="external_org_name" 
+                        select="current-group()//column[@name= 'field_key' and text()='co4_external_org_name']/parent::node()/column[@name= 'meta_value']/text()"/>
+                    <xsl:variable name="org_ext_id"
+                        select="$externalOrg//Department[@id=$external_org_name]/Key/text()"/>
+                    <key>vu.edu.au/org-<xsl:value-of select="$org_ext_id"/></key>
+                    <relation type="hasParticipant"/>
                 </xsl:if>
 
             </activity>
@@ -1038,8 +994,7 @@
     <xsl:template name="collection">
         <!-- Collection Record for research data-->
         <registryObject group="Victoria University">
-            <key>vu/collection/<xsl:value-of select="current-grouping-key()"/></key>
-            <originatingSource>
+            <key>vu/collection/<xsl:value-of select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='collection_title']/parent::node()/column[@name= 'hash']/text()"/></key><originatingSource>
                 <xsl:value-of select="$originating_source"/>
             </originatingSource>
 
@@ -1106,8 +1061,7 @@
                 </xsl:choose>
                 <xsl:call-template name="rifcs_rights"/>
                 <xsl:call-template name="collection_coverage"/>
-                <!--  <xsl:call-template name="collection_url"/>-->
-
+          
                 <xsl:call-template name="rifcs_location">
                     <xsl:with-param name="email_fieldkey" select="'collection_email'"/>
                 </xsl:call-template>
@@ -1115,29 +1069,33 @@
                 <xsl:call-template name="collection_citation"/>
                 <xsl:call-template name="collection_identifier"/>
 
-
+                <!-- create relationship from collection to project -->
                     <relatedObject>
-                  
-                            <key>vu/project/<xsl:value-of
-                                select="current-group()/column[@name= 'field_key' and text()=$project_title_fieldkey]/parent::node()/column[@name= 'meta_value']/text()"
+                            <key>vu/project/<xsl:value-of select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()=$project_title_fieldkey]/parent::node()/column[@name= 'hash']/text()"
                             /></key>
-                      
-                        <relation type="isOutputOf"/>
+                         <relation type="isOutputOf"/>
                     </relatedObject>
                 
-
+                <!-- create relationship from collection to p1 -->
                 <xsl:if
                     test="current-group()//column[@name='field_key']='p1_title' or current-group()//column[@name='field_key']='p1_firstname' or current-group()//column[@name='field_key']='p1_lastname'">
                     <relatedObject>
                         <key>vu/person/<xsl:value-of
-                            select="current-group()/column[@name= 'field_key' and text()='p1_firstname']/parent::node()/column[@name= 'meta_value']/text()"
+                            select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='p1_firstname']/parent::node()/column[@name= 'hash']/text()"
                         />_<xsl:value-of
-                            select="current-group()/column[@name= 'field_key' and text()='p1_lastname']/parent::node()/column[@name= 'meta_value']/text()"
+                            select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='p1_lastname']/parent::node()/column[@name= 'hash']/text()"
                         /></key>
-                        <relation type="isManagedBy"/>
+                        <xsl:choose>
+                            <xsl:when test="current-group()//column[@name='field_key'and text()='p1_relationship']/parent::node()/column[@name= 'meta_value']/text()='Manager / Contact'">
+                                <relation type="isManagedBy"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <relation type="hasCollector"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
                      </relatedObject>
                  </xsl:if>
-
+<!--
                 <xsl:if
                     test="current-group()//column[@name='field_key']='p1_nla'">
                     <relatedObject>
@@ -1145,22 +1103,37 @@
                             select="current-group()/column[@name= 'field_key' and text()='p1_nla']/parent::node()/column[@name= 'meta_value']/text()"
                         />
                         </key>
-                        <relation type="isManagedBy"/>
+                        <xsl:choose>
+                            <xsl:when test="current-group()//column[@name='field_key'and text()='p1_relationship']/parent::node()/column[@name= 'meta_value']/text()='Manager / Contact'">
+                                <relation type="isManagedBy"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <relation type="hasCollector"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </relatedObject>
                 </xsl:if>
-
+-->
+                <!-- create relationship from collection to co1 -->
                 <xsl:if
                     test="current-group()//column[@name='field_key']='co1_title' or current-group()//column[@name='field_key']='co1_firstname' or current-group()//column[@name='field_key']='co1_lastname'">
                     <relatedObject>
                         <key>vu/person/<xsl:value-of
-                            select="current-group()/column[@name= 'field_key' and text()='co1_firstname']/parent::node()/column[@name= 'meta_value']/text()"
+                            select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co1_firstname']/parent::node()/column[@name= 'hash']/text()"
                         />_<xsl:value-of
-                            select="current-group()/column[@name= 'field_key' and text()='co1_lastname']/parent::node()/column[@name= 'meta_value']/text()"
+                            select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co1_lastname']/parent::node()/column[@name= 'hash']/text()"
                         /></key>
-                        <relation type="isManagedBy"/>
+                        <xsl:choose>
+                            <xsl:when test="current-group()//column[@name='field_key'and text()='co1_relationship']/parent::node()/column[@name= 'meta_value']/text()='Manager / Contact'">
+                                <relation type="isManagedBy"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <relation type="hasCollector"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </relatedObject>
                 </xsl:if>
-                
+  <!--              
                 <xsl:if
                     test="current-group()//column[@name='field_key']='co1_nla'">
                     <relatedObject>
@@ -1168,22 +1141,38 @@
                             select="current-group()/column[@name= 'field_key' and text()='co1_nla']/parent::node()/column[@name= 'meta_value']/text()"
                         />
                         </key>
-                        <relation type="isManagedBy"/>
+                        <xsl:choose>
+                            <xsl:when test="current-group()//column[@name='field_key'and text()='co1_relationship']/parent::node()/column[@name= 'meta_value']/text()='Manager / Contact'">
+                                <relation type="isManagedBy"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <relation type="hasCollector"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </relatedObject>
                 </xsl:if>
-
+-->
+                <!-- create relationship from collection to co2 -->
                 <xsl:if
                     test="current-group()//column[@name='field_key']='co2_title' or current-group()//column[@name='field_key']='co2_firstname' or current-group()//column[@name='field_key']='co2_lastname'">
                     <relatedObject>
                         <key>vu/person/<xsl:value-of
-                            select="current-group()/column[@name= 'field_key' and text()='co2_firstname']/parent::node()/column[@name= 'meta_value']/text()"
+                            select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co2_firstname']/parent::node()/column[@name= 'hash']/text()"
                         />_<xsl:value-of
-                            select="current-group()/column[@name= 'field_key' and text()='co2_lastname']/parent::node()/column[@name= 'meta_value']/text()"
-                        /></key>
-                        <relation type="isManagedBy"/>
+                            select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co2_lastname']/parent::node()/column[@name= 'hash']/text()"
+                        />
+                        </key>
+                        <xsl:choose>
+                            <xsl:when test="current-group()//column[@name='field_key'and text()='co2_relationship']/parent::node()/column[@name= 'meta_value']/text()='Manager / Contact'">
+                                <relation type="isManagedBy"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <relation type="hasCollector"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </relatedObject>
                 </xsl:if>
-                
+   <!--             
                 <xsl:if
                     test="current-group()//column[@name='field_key']='co2_nla'">
                     <relatedObject>
@@ -1191,22 +1180,37 @@
                             select="current-group()/column[@name= 'field_key' and text()='co2_nla']/parent::node()/column[@name= 'meta_value']/text()"
                         />
                         </key>
-                        <relation type="isManagedBy"/>
+                        <xsl:choose>
+                            <xsl:when test="current-group()//column[@name='field_key'and text()='co2_relationship']/parent::node()/column[@name= 'meta_value']/text()='Manager / Contact'">
+                                <relation type="isManagedBy"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <relation type="hasCollector"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </relatedObject>
                 </xsl:if>
-
+-->
+                <!-- create relationship from collection to co3 -->
                 <xsl:if
                     test="current-group()//column[@name='field_key']='co3_title' or current-group()//column[@name='field_key']='co3_firstname' or current-group()//column[@name='field_key']='co3_lastname'">
                     <relatedObject>
                         <key>vu/person/<xsl:value-of
-                            select="current-group()/column[@name= 'field_key' and text()='co3_firstname']/parent::node()/column[@name= 'meta_value']/text()"
+                            select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co3_firstname']/parent::node()/column[@name= 'hash']/text()"
                         />_<xsl:value-of
-                            select="current-group()/column[@name= 'field_key' and text()='co3_lastname']/parent::node()/column[@name= 'meta_value']/text()"
+                            select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co3_lastname']/parent::node()/column[@name= 'hash']/text()"
                         /></key>
-                        <relation type="isManagedBy"/>
+                        <xsl:choose>
+                            <xsl:when test="current-group()//column[@name='field_key'and text()='co3_relationship']/parent::node()/column[@name= 'meta_value']/text()='Manager / Contact'">
+                                <relation type="isManagedBy"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <relation type="hasCollector"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </relatedObject>
                 </xsl:if>
-                
+   <!--             
                 <xsl:if
                     test="current-group()//column[@name='field_key']='co3_nla'">
                     <relatedObject>
@@ -1214,22 +1218,37 @@
                             select="current-group()/column[@name= 'field_key' and text()='co3_nla']/parent::node()/column[@name= 'meta_value']/text()"
                         />
                         </key>
-                        <relation type="isManagedBy"/>
+                        <xsl:choose>
+                            <xsl:when test="current-group()//column[@name='field_key'and text()='co3_relationship']/parent::node()/column[@name= 'meta_value']/text()='Manager / Contact'">
+                                <relation type="isManagedBy"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <relation type="hasCollector"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </relatedObject>
                 </xsl:if>
-                
+       -->         
+                <!-- create relationship from collection to co4 -->
                 <xsl:if
                     test="current-group()//column[@name='field_key']='co4_title' or current-group()//column[@name='field_key']='co4_firstname' or current-group()//column[@name='field_key']='co4_lastname'">
                     <relatedObject>
                         <key>vu/person/<xsl:value-of
-                            select="current-group()/column[@name= 'field_key' and text()='co4_firstname']/parent::node()/column[@name= 'meta_value']/text()"
+                            select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co4_firstname']/parent::node()/column[@name= 'hash']/text()"
                         />_<xsl:value-of
-                            select="current-group()/column[@name= 'field_key' and text()='co4_lastname']/parent::node()/column[@name= 'meta_value']/text()"
+                            select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co4_lastname']/parent::node()/column[@name= 'hash']/text()"
                         /></key>
-                        <relation type="isManagedBy"/>
+                        <xsl:choose>
+                            <xsl:when test="current-group()//column[@name='field_key'and text()='co4_relationship']/parent::node()/column[@name= 'meta_value']/text()='Manager / Contact'">
+                                <relation type="isManagedBy"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <relation type="hasCollector"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </relatedObject>
                 </xsl:if>
-                
+          <!--      
                 <xsl:if
                     test="current-group()//column[@name='field_key']='co4_nla'">
                     <relatedObject>
@@ -1237,10 +1256,17 @@
                             select="current-group()/column[@name= 'field_key' and text()='co4_nla']/parent::node()/column[@name= 'meta_value']/text()"
                         />
                         </key>
-                        <relation type="isManagedBy"/>
+                        <xsl:choose>
+                            <xsl:when test="current-group()//column[@name='field_key'and text()='co4_relationship']/parent::node()/column[@name= 'meta_value']/text()='Manager / Contact'">
+                                <relation type="isManagedBy"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <relation type="hasCollector"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </relatedObject>
                 </xsl:if>
-                
+              -->  
 
             </xsl:element>
         </registryObject>
@@ -1310,6 +1336,10 @@
                 <xsl:value-of
                     select="current-group()/column[@name= 'field_key' and text()=$fieldkey]/parent::node()/column[@name= 'meta_value']/text()"
                 />
+                <xsl:if test="current-group()//column[@name='field_key']='project_org_unit'">
+                    Project Organization Unit: <xsl:value-of select="current-group()/column[@name= 'field_key' and text()='project_org_unit']/parent::node()/column[@name= 'meta_value']/text()"/>, Victoria University
+                </xsl:if>
+                
             </description>
         </xsl:if>
     </xsl:template>
@@ -1358,6 +1388,7 @@
                 <licence>
                     <xsl:value-of
                         select="current-group()/column[@name= 'field_key' and text()=$licence_fieldkey]/parent::node()/column[@name= 'meta_value']/text()"/>
+                    <xsl:text>&#10;</xsl:text>
                     <xsl:if test="current-group()//column[@name='field_key']='coll_license_other'">
                         <xsl:value-of
                             select="current-group()/column[@name= 'field_key' and text()='coll_license_other']/parent::node()/column[@name= 'meta_value']/text()"
@@ -1379,24 +1410,22 @@
     <xsl:template name="project_coverage">
         <xsl:if
             test="current-group()//column[@name='field_key']='project_start_date' or current-group()//column[@name='field_key']='project_end_date'">
-            <coverage>
-                <temporal>
+            <existenceDates>
                     <xsl:if test="current-group()//column[@name='field_key']='project_start_date'">
-                        <date type="dateFrom" dateFormat="W3CDTF">
+                        <startDate  dateFormat="W3CDTF">
                             <xsl:value-of
                                 select="current-group()/column[@name= 'field_key' and text()='project_start_date']/parent::node()/column[@name= 'meta_value']/text()"
                             />
-                        </date>
+                        </startDate>
                     </xsl:if>
                     <xsl:if test="current-group()//column[@name='field_key']='project_end_date'">
-                        <date type="dateTo" dateFormat="W3CDTF">
+                        <endDate  dateFormat="W3CDTF">
                             <xsl:value-of
                                 select="current-group()/column[@name= 'field_key' and text()='project_end_date']/parent::node()/column[@name= 'meta_value']/text()"
                             />
-                        </date>
+                        </endDate>
                     </xsl:if>
-                </temporal>
-            </coverage>
+                </existenceDates>
         </xsl:if>
     </xsl:template>
 
@@ -1649,19 +1678,19 @@
         </xsl:if>
     </xsl:template>
 
-
     <xsl:template name="vu_organization">
         <xsl:param name="org_school_name"/>
         <xsl:param name="org_faculty_name"/>
         <xsl:param name="vu_internal"/>
         <xsl:param name="external_org_name"/>
         <xsl:param name="external_org_ands_id"/>
+        <xsl:param name="current_project_id"/>
 
-        <!-- <xsl:if test="current-group()//column[@name='field_key']='p1_external_org_name'"> -->
         <xsl:comment>
             org_school_name='<xsl:value-of select="$org_school_name"/>'
             org_faculty_name='<xsl:value-of select="$org_faculty_name"/>'
             external_org_name='<xsl:value-of select="$external_org_name"/>'
+            current project ID='<xsl:value-of select="$current_project_id"/>'
          </xsl:comment>
 
         <xsl:choose>
@@ -1672,19 +1701,19 @@
             <xsl:when test="$vu_internal = 'No'">
                 <xsl:comment> external organization </xsl:comment>
                 <xsl:variable name="org_ext_id"
-                    select="$externalOrg//Department[Faculty=$external_org_name]/@id"/>
+                    select="$externalOrg//Department[@id=$external_org_name]/Key/text()"/>
                 <xsl:variable name="org_ext_displayname"
-                    select="$externalOrg//Department[Faculty=$external_org_name]/DisplayName/text()"/>
+                    select="$externalOrg//Department[@id=$external_org_name]/DisplayName/text()"/>
                 <xsl:variable name="org_description"
-                    select="$externalOrg//Department[Faculty=$external_org_name]/Description/text()"/>
+                    select="$externalOrg//Department[@id=$external_org_name]/Description/text()"/>
                 <xsl:variable name="org_website"
-                    select="$externalOrg//Department[Faculty=$external_org_name]/Website/text()"/>
+                    select="$externalOrg//Department[@id=$external_org_name]/Website/text()"/>
                 <xsl:variable name="org_email"
-                    select="$externalOrg//Department[Faculty=$external_org_name]/Email/text()"/>
+                    select="$externalOrg//Department[@id=$external_org_name]/Email/text()"/>
                 <xsl:variable name="org_address"
-                    select="$externalOrg//Department[Faculty=$external_org_name]/Address/text()"/>
+                    select="$externalOrg//Department[@id=$external_org_name]/Address/text()"/>
                 <xsl:variable name="org_phone"
-                    select="$externalOrg//Department[Faculty=$external_org_name]/Phone/text()"/>
+                    select="$externalOrg//Department[@id=$external_org_name]/Phone/text()"/>
 
                 <xsl:comment>
             ext_org_id='<xsl:value-of select="$org_ext_id"/>'
@@ -1694,8 +1723,8 @@
             ext_org_email='<xsl:value-of select="$org_email"/>'
             ext_org_address='<xsl:value-of select="$org_address"/>'
             ext_org_phone='<xsl:value-of select="$org_phone"/>'
-          
-         </xsl:comment>
+            current project ID='<xsl:value-of select="$current_project_id"/>'
+                </xsl:comment>
                 <xsl:if test="$org_ext_id!=''">
 
                     <xsl:element name="registryObject">
@@ -1717,132 +1746,103 @@
                             </description>
                             <location>
                                 <address>
-                    <xsl:if test="$org_email">   
-                        <electronic type="email">
-                            <value>
-                                <xsl:value-of select="$org_email"/>
-                            </value>
-                        </electronic>
-                    </xsl:if>
-                     <xsl:if test="$org_phone">   
-                        <electronic type="phone">
-                            <value>
-                                <xsl:value-of select="$org_phone"/>
-                            </value>
-                        </electronic>
-                    </xsl:if>
-                    <xsl:if test="$org_website">   
-                        <electronic type="url">
-                            <value>
-                                <xsl:value-of select="$org_website"/>
-                            </value>
-                        </electronic>
-                    </xsl:if>
-                    <xsl:if test="$org_address">   
-                        <physical type="streetAddress">
-                            <addressPart type="text">
-                                <xsl:value-of select="$org_address"/>
-                            </addressPart>
-                        </physical>
-                    </xsl:if>
-                </address>
-                            </location>
-                            <!--
-                        <xsl:if test="$org_website">
-                            <relatedInfo>
-                                <identifier type="website">
-                                    <xsl:value-of select="$org_website"/>
-                                </identifier>
-                                <title>URL of Faculty / School/ Institute </title>
-                            </relatedInfo>
-                        </xsl:if>
-                        -->
+                                <xsl:if test="$org_email">   
+                                    <electronic type="email">
+                                        <value>
+                                            <xsl:value-of select="$org_email"/>
+                                        </value>
+                                    </electronic>
+                                </xsl:if>
+                                <xsl:if test="$org_phone">   
+                                    <electronic type="phone">
+                                        <value>
+                                            <xsl:value-of select="$org_phone"/>
+                                           </value>
+                                    </electronic>
+                                </xsl:if>
+                                <xsl:if test="$org_website">   
+                                    <electronic type="url">
+                                        <value>
+                                            <xsl:value-of select="$org_website"/>
+                                        </value>
+                                    </electronic>
+                                </xsl:if>
+                                <xsl:if test="$org_address">   
+                                    <physical type="streetAddress">
+                                        <addressPart type="text">
+                                            <xsl:value-of select="$org_address"/>
+                                        </addressPart>
+                                    </physical>
+                                </xsl:if>
+                            </address>
+                        </location>
+                     
+                      <xsl:if test="current-group()//column[@name='field_key'and text()='p1_internal']/parent::node()/column[@name= 'meta_value']/text()='No'">
+                                
+                        <relatedObject>                      
+                            <key>vu/person/<xsl:value-of
+                                select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='p1_firstname']/parent::node()/column[@name= 'hash']/text()"
+                            />_<xsl:value-of
+                                select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='p1_lastname']/parent::node()/column[@name= 'hash']/text()"
+                            /></key>
+                            <relation type="hasMember"/>
+                        </relatedObject>
+                      </xsl:if>
+                           
+                            <xsl:if test="current-group()//column[@name='field_key'and text()='co1_internal']/parent::node()/column[@name= 'meta_value']/text()='No'">
+                                
+                                <relatedObject>                      
+                                    <key>vu/person/<xsl:value-of
+                                        select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co1_firstname']/parent::node()/column[@name= 'hash']/text()"
+                                    />_<xsl:value-of
+                                        select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co1_lastname']/parent::node()/column[@name= 'hash']/text()"
+                                    /></key>
+                                    <relation type="hasMember"/>
+                                </relatedObject>
+                            </xsl:if>     
+                            
+                            <xsl:if test="current-group()//column[@name='field_key'and text()='co2_internal']/parent::node()/column[@name= 'meta_value']/text()='No'">
+                                
+                                <relatedObject>                      
+                                    <key>vu/person/<xsl:value-of
+                                        select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co2_firstname']/parent::node()/column[@name= 'hash']/text()"
+                                    />_<xsl:value-of
+                                        select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co2_lastname']/parent::node()/column[@name= 'hash']/text()"
+                                    /></key>
+                                    <relation type="hasMember"/>
+                                </relatedObject>
+                            </xsl:if>  
+                            
+                            <xsl:if test="current-group()//column[@name='field_key'and text()='co3_internal']/parent::node()/column[@name= 'meta_value']/text()='No'">
+                                
+                                <relatedObject>                      
+                                    <key>vu/person/<xsl:value-of
+                                        select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co3_firstname']/parent::node()/column[@name= 'hash']/text()"
+                                    />_<xsl:value-of
+                                        select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co3_lastname']/parent::node()/column[@name= 'hash']/text()"
+                                    /></key>
+                                    <relation type="hasMember"/>
+                                </relatedObject>
+                            </xsl:if>  
+                            
+                            <xsl:if test="current-group()//column[@name='field_key'and text()='co4_internal']/parent::node()/column[@name= 'meta_value']/text()='No'">
+                                
+                                <relatedObject>                      
+                                    <key>vu/person/<xsl:value-of
+                                        select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co4_firstname']/parent::node()/column[@name= 'hash']/text()"
+                                    />_<xsl:value-of
+                                        select="current-group()/column[@name= 'id' and text()=current-grouping-key()]/parent::node()/column[@name= 'field_key' and text()='co4_lastname']/parent::node()/column[@name= 'hash']/text()"
+                                    /></key>
+                                    <relation type="hasMember"/>
+                                </relatedObject>
+                            </xsl:if>  
+                            
                         </party>
                     </xsl:element>
                 </xsl:if>
-
-
-            </xsl:when>
-
-            <!--  
-        <xsl:otherwise>
-            <xsl:comment> internal organisation </xsl:comment>
-            -->
-            <!--
-           <xsl:if test="current-group()//column[@name='field_key']='p1_faculty'">
-           -->
-            <!--
-            <xsl:variable name="org_id"
-                select="$internalOrg//Department[Faculty=$org_faculty_name and Name=$org_school_name]/@id"/>
-            <xsl:variable name="org_displayname"
-                select="$internalOrg//Department[Faculty=$org_faculty_name and Name=$org_school_name]/DisplayName/text()"/>
-            <xsl:variable name="org_description"
-                select="$internalOrg//Department[Faculty=$org_faculty_name and Name=$org_school_name]/Description/text()"/>
-            <xsl:variable name="org_website"
-                select="$internalOrg//Department[Faculty=$org_faculty_name and Name=$org_school_name]/Website/text()"/>
-            <xsl:variable name="org_email"
-                select="$internalOrg//Department[Faculty=$org_faculty_name and Name=$org_school_name]/Email/text()"/>
-            <xsl:variable name="org_address"
-                select="$internalOrg//Department[Faculty=$org_faculty_name and Name=$org_school_name]/Address/text()"/>
-            <xsl:variable name="org_phone"
-                select="$internalOrg//Department[Faculty=$org_faculty_name and Name=$org_school_name]/Phone/text()"/>
-
-            
-            <registryObject group="Victoria University">
-                <key>vu.edu.au/org-<xsl:value-of select="$org_id"/></key>
-                <originatingSource>
-                    <xsl:value-of select="$originating_source"/>
-                </originatingSource>
-                <party type="group">
-                    <name>
-                        <namePart type="title">
-                            <xsl:value-of select="$org_displayname"/>
-                        </namePart>
-                    </name>
-                    <description type="brief">
-                        <xsl:value-of select="$org_description"/>
-                    </description>
-                    <location>
-                        <address>
-                    <xsl:if test="$org_email">   
-                        <electronic type="email">
-                            <value>
-                                <xsl:value-of select="$org_email"/>
-                            </value>
-                        </electronic>
-                    </xsl:if>
-                     <xsl:if test="$org_phone">   
-                        <electronic type="phone">
-                            <value>
-                                <xsl:value-of select="$org_phone"/>
-                            </value>
-                        </electronic>
-                    </xsl:if>
-                    <xsl:if test="org_address">   
-                        <physical type="streetAddress">
-                            <addressPart type="text">
-                                <xsl:value-of select="org_address"/>
-                            </addressPart>
-                        </physical>
-                    </xsl:if>
-                </address>
-                    </location>
-                    <xsl:if test="$org_website">
-                        <relatedInfo>
-                            <identifier type="website">
-                                <xsl:value-of select="$org_website"/>
-                            </identifier>
-                            <title>URL of Faculty / School/ Institute </title>
-                        </relatedInfo>
-                    </xsl:if>
-                </party>
-            </registryObject>
-        </xsl:otherwise>
--->
+       </xsl:when>
         </xsl:choose>
 
     </xsl:template>
-
-
 
 </xsl:stylesheet>

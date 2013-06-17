@@ -1,9 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Departments>
-	<Department id="VICTORIAN INSTITUTE OF SPORT (VIS)">
-		<Name/>
-		<DisplayName>Victorian Institute Of Sport (Vis)</DisplayName>
-		<Faculty>Victorian Institute of Sport (VIS)</Faculty>
+	<Department id="GWMWater">
+		<Key>1002</Key>
+		<DisplayName>GWMWater</DisplayName>
+		<Description>Grampians / Wimmera / Mallee Water is a government owned water business responsible for managing water and waste supply systems in the Grampians, Wimmera and Mallee regions of Western Victoria.</Description>
+		<Website>http://www.gwmwater.org.au/</Website>
+		<Email/>
+		<Address>PO Box 481
+Horsham Vic 3402</Address>
+		<Phone>1300 659 961
++61 3 5382 4611</Phone>
+	</Department>
+	<Department id="Swiss Federal Institute of Technology (Zurich ETH)">
+		<Key>1003</Key>
+		<DisplayName>Swiss Federal Institute of Technology (Zurich ETH)</DisplayName>
+		<Description>Consistently ranked the top university in continental Europe, ETH Zurich, the Swiss Federal Institute of Technology, is a leading player in research and education in Switzerland and worldwide. ETH Zurich's 16 departments offer Bachelor, Master and Doctoral programmes in engineering and natural sciences. The language of instruction in the Bachelor programmes is German, whereas English is the lingua franca on the graduate level. All degree programmes provide a solid scientific foundation combined with outstanding all-round skills, equipping ETH graduates with the abilities and flexibility needed for a career in industry, business or the public sector, as entrepreneur or scientist.</Description>
+		<Website>http://www.ethz.ch/index_EN</Website>
+		<Email/>
+		<Address>Weinbergstrasse 56/58
+8092 Zurich
+Switzerland</Address>
+		<Phone>+41 43 499 60 80</Phone>
+	</Department>
+	<Department id="University of Ballarat">
+		<Key>1004</Key>
+		<DisplayName>University of Ballarat</DisplayName>
+		<Description>The University of Ballarat (UB) is Australia's only regional, multi-sector university. We are the third oldest site of higher learning in Australia, and offer secondary schooling, TAFE, higher education, and research opportunities. We have campuses in Ballarat, Horsham, Stawell and Ararat. We also work with a range of partner institutes across Australia and the world.
+
+UB has around 23,000 international and domestic students. We are committed to serving regional Victorian communities, yet have a broad national and international outlook. UB offers the best of both worlds; combining a strong tradition of 142 years of tertiary education with the freedom and dynamism that comes with being a multi-sector University with close links to local industry and technology.</Description>
+		<Website>http://www.ballarat.edu.au/</Website>
+		<Email/>
+		<Address>P.O. Box 663. Ballarat VIC 3353</Address>
+		<Phone>+61 3 5327 9000</Phone>
+	</Department>
+	<Department id="Victorian Institute of Sport (VIS)">
+		<Key>1005</Key>
+		<DisplayName>Victorian Institute of Sport (VIS)</DisplayName>
 		<Description>The VIS was set up to assist the development of Victoria's best athletes. It was established in 1990 by the State Government as a private trustee company, with its Board of Directors appointed by the Victorian Minister for Sport. The VIS is funded by the State Government through Sport and Recreation Victoria, the Commonwealth Government through the Australian Sports Commission and numerous corporate sector sponsors. The VIS provides programs in partnership with State Sporting Organisations, and also offers advanced and specialised coaching, sports science and sports medicine services, career and education advice, and training and competition support are provided to VIS athletes, as well as offering emerging elite athletes from country Victoria assistance through Regional Academy of Sport programs.</Description>
 		<Website>http://www.vis.org.au/</Website>
 		<Email/>
